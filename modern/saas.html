@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+
+    <!-- =============================================
+         TEMPLATE: Modern SaaS (template-master-example)
+         THEME: Modern Tech
+         
+         PANDUAN UNTUK MEMBUAT TEMPLATE BARU:
+         1. Copy file ini sebagai basis
+         2. Ganti struktur HTML sesuai layout yang diinginkan
+         3. Pastikan semua teks menggunakan placeholder {{NAMA}}
+         4. Pastikan semua warna menggunakan var(--nama)
+         5. Jangan ubah format placeholder — harus persis {{NAMA}}
+         ============================================= -->
+
+    <!-- Google Fonts — sesuaikan per tema -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- =============================================
+         CSS VARIABLES — Diisi oleh App.Injector
+         Semua warna tema dikontrol dari sini.
+         AI akan mengganti value-nya via css_vars JSON.
+         ============================================= -->
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-light: rgba(16, 185, 129, 0.15);
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.3);
+            --radius: 16px;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+        }
+
+        /* ── Theme Effects ── */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(80px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px var(--accent-glow);
+        }
+
+        .bg-noise {
+            position: relative;
+        }
+
+        .bg-noise::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="boop-container" class="relative w-full overflow-hidden antialiased">
+
+        <!-- ============================================= -->
+        <!-- SECTION: NAVBAR                               -->
+        <!-- ============================================= -->
+        <nav class="fixed top-0 w-full z-50 border-b border-white/5"
+            style="background: rgba(15,23,42,0.8); backdrop-filter: blur(20px);">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="font-heading text-xl font-bold" style="color: var(--text);">
+                    {{BRAND_NAME}}
+                </div>
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium" style="color: var(--text-muted);">
+                    <a href="#features" class="hover:text-white transition-colors">{{NAV_LINK_1}}</a>
+                    <a href="#pricing" class="hover:text-white transition-colors">{{NAV_LINK_2}}</a>
+                    <a href="#testimonials" class="hover:text-white transition-colors">{{NAV_LINK_3}}</a>
+                    <a href="#faq" class="hover:text-white transition-colors">{{NAV_LINK_4}}</a>
+                </div>
+                <!-- CTA -->
+                <a href="#cta"
+                    class="px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                    style="background: var(--accent); color: var(--bg);">
+                    {{NAV_CTA}}
+                </a>
+            </div>
+        </nav>
+
+        <!-- ============================================= -->
+        <!-- SECTION: HERO                                 -->
+        <!-- ============================================= -->
+        <section
+            class="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 pb-20 bg-noise overflow-hidden">
+            <!-- Glow Orbs -->
+            <div class="glow-orb w-96 h-96 top-20 left-1/4 pulse-glow" style="background: var(--accent);"></div>
+            <div class="glow-orb w-80 h-80 bottom-20 right-1/4 float" style="background: var(--primary); opacity: 0.2;">
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold mb-8 border"
+                    style="background: var(--primary-light); color: var(--accent); border-color: rgba(16,185,129,0.2);">
+                    <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--accent);"></span>
+                    {{HERO_BADGE}}
+                </div>
+
+                <!-- Headline -->
+                <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+                    style="color: var(--text);">
+                    {{HEADLINE}}
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10" style="color: var(--text-muted);">
+                    {{SUBHEADLINE}}
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#cta"
+                        class="px-8 py-4 rounded-full text-base font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                        style="background: var(--accent); color: var(--bg); box-shadow: 0 0 20px var(--accent-glow);">
+                        {{HERO_CTA}}
+                    </a>
+                    <a href="#features"
+                        class="px-8 py-4 rounded-full text-base font-semibold border transition-all hover:bg-white/5"
+                        style="color: var(--accent); border-color: rgba(16,185,129,0.3);">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="play" class="w-4 h-4"></i>
+                            {{HERO_CTA_SECONDARY}}
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Hero Image / Mockup -->
+                <div class="mt-16 relative">
+                    <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                        style="background: var(--surface);">
+                        <!-- Browser Chrome -->
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                            <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+                            <div class="flex-1 mx-4 h-6 rounded-full bg-white/5"></div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop"
+                            alt="Dashboard Preview" class="w-full" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: SOCIAL PROOF / LOGO STRIP            -->
+        <!-- ============================================= -->
+        <section class="py-12 border-y border-white/5" style="background: var(--surface);">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <p class="text-xs uppercase tracking-widest font-medium mb-8" style="color: var(--text-muted);">
+                    {{SOCIAL_PROOF_LABEL}}
+                </p>
+                <div class="flex items-center justify-center gap-12 flex-wrap opacity-50">
+                    <span class="text-lg font-bold font-heading" style="color: var(--text-muted);">{{LOGO_1}}</span>
+                    <span class="text-lg font-bold font-heading" style="color: var(--text-muted);">{{LOGO_2}}</span>
+                    <span class="text-lg font-bold font-heading" style="color: var(--text-muted);">{{LOGO_3}}</span>
+                    <span class="text-lg font-bold font-heading" style="color: var(--text-muted);">{{LOGO_4}}</span>
+                    <span class="text-lg font-bold font-heading" style="color: var(--text-muted);">{{LOGO_5}}</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: FEATURES / BENEFITS (Bento Grid)     -->
+        <!-- ============================================= -->
+        <section id="features" class="py-24 px-6" style="background: var(--bg);">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-5xl font-semibold tracking-tight mb-4"
+                        style="color: var(--text);">
+                        {{FEATURES_TITLE}}
+                    </h2>
+                    <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">
+                        {{FEATURES_SUBTITLE}}
+                    </p>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature 1 (Featured — spans 2 cols) -->
+                    <div class="card-hover md:col-span-2 p-8 rounded-2xl border border-white/10 relative overflow-hidden"
+                        style="background: var(--surface);">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                            style="background: var(--primary-light);">
+                            <i data-lucide="zap" class="w-6 h-6" style="color: var(--accent);"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold mb-2" style="color: var(--text);">
+                            {{BENEFIT_1_TITLE}}</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{{BENEFIT_1_DESC}}</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="card-hover p-8 rounded-2xl border border-white/10" style="background: var(--surface);">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                            style="background: var(--primary-light);">
+                            <i data-lucide="shield-check" class="w-6 h-6" style="color: var(--accent);"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold mb-2" style="color: var(--text);">
+                            {{BENEFIT_2_TITLE}}</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{{BENEFIT_2_DESC}}</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="card-hover p-8 rounded-2xl border border-white/10" style="background: var(--surface);">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                            style="background: var(--primary-light);">
+                            <i data-lucide="bar-chart-3" class="w-6 h-6" style="color: var(--accent);"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold mb-2" style="color: var(--text);">
+                            {{BENEFIT_3_TITLE}}</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{{BENEFIT_3_DESC}}</p>
+                    </div>
+
+                    <!-- Feature 4 (Featured — spans 2 cols) -->
+                    <div class="card-hover md:col-span-2 p-8 rounded-2xl border border-white/10"
+                        style="background: var(--surface);">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                            style="background: var(--primary-light);">
+                            <i data-lucide="layers" class="w-6 h-6" style="color: var(--accent);"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold mb-2" style="color: var(--text);">
+                            {{BENEFIT_4_TITLE}}</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{{BENEFIT_4_DESC}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: HOW IT WORKS                         -->
+        <!-- ============================================= -->
+        <section class="py-24 px-6" style="background: var(--surface);">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-5xl font-semibold tracking-tight mb-4"
+                        style="color: var(--text);">
+                        {{HOW_IT_WORKS_TITLE}}
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div>
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 font-heading text-xl font-bold"
+                            style="background: var(--accent); color: var(--bg);">1</div>
+                        <h3 class="font-heading text-lg font-semibold mb-2" style="color: var(--text);">{{STEP_1_TITLE}}
+                        </h3>
+                        <p class="text-sm" style="color: var(--text-muted);">{{STEP_1_DESC}}</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div>
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 font-heading text-xl font-bold"
+                            style="background: var(--accent); color: var(--bg);">2</div>
+                        <h3 class="font-heading text-lg font-semibold mb-2" style="color: var(--text);">{{STEP_2_TITLE}}
+                        </h3>
+                        <p class="text-sm" style="color: var(--text-muted);">{{STEP_2_DESC}}</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div>
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 font-heading text-xl font-bold"
+                            style="background: var(--accent); color: var(--bg);">3</div>
+                        <h3 class="font-heading text-lg font-semibold mb-2" style="color: var(--text);">{{STEP_3_TITLE}}
+                        </h3>
+                        <p class="text-sm" style="color: var(--text-muted);">{{STEP_3_DESC}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: TESTIMONIALS                         -->
+        <!-- ============================================= -->
+        <section id="testimonials" class="py-24 px-6" style="background: var(--bg);">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-5xl font-semibold tracking-tight mb-4"
+                        style="color: var(--text);">
+                        {{TESTIMONIALS_TITLE}}
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="card-hover p-6 rounded-2xl border border-white/10" style="background: var(--surface);">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                                style="background: var(--primary-light); color: var(--accent);">
+                                {{TESTIMONIAL_1_INITIAL}}
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold" style="color: var(--text);">{{TESTIMONIAL_1_NAME}}
+                                </div>
+                                <div class="text-xs" style="color: var(--text-muted);">{{TESTIMONIAL_1_ROLE}}</div>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+                            "{{TESTIMONIAL_1_QUOTE}}"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="card-hover p-6 rounded-2xl border border-white/10" style="background: var(--surface);">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                                style="background: var(--primary-light); color: var(--accent);">
+                                {{TESTIMONIAL_2_INITIAL}}
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold" style="color: var(--text);">{{TESTIMONIAL_2_NAME}}
+                                </div>
+                                <div class="text-xs" style="color: var(--text-muted);">{{TESTIMONIAL_2_ROLE}}</div>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+                            "{{TESTIMONIAL_2_QUOTE}}"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="card-hover p-6 rounded-2xl border border-white/10" style="background: var(--surface);">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                                style="background: var(--primary-light); color: var(--accent);">
+                                {{TESTIMONIAL_3_INITIAL}}
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold" style="color: var(--text);">{{TESTIMONIAL_3_NAME}}
+                                </div>
+                                <div class="text-xs" style="color: var(--text-muted);">{{TESTIMONIAL_3_ROLE}}</div>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+                            "{{TESTIMONIAL_3_QUOTE}}"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: PRICING                              -->
+        <!-- ============================================= -->
+        <section id="pricing" class="py-24 px-6" style="background: var(--surface);">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-5xl font-semibold tracking-tight mb-4"
+                        style="color: var(--text);">
+                        {{PRICING_TITLE}}
+                    </h2>
+                    <p class="text-lg" style="color: var(--text-muted);">{{PRICING_SUBTITLE}}</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Plan 1 -->
+                    <div class="p-8 rounded-2xl border border-white/10" style="background: var(--bg);">
+                        <h3 class="font-heading text-lg font-semibold mb-2" style="color: var(--text);">{{PLAN_1_NAME}}
+                        </h3>
+                        <div class="text-3xl font-bold font-heading mb-1" style="color: var(--text);">{{PLAN_1_PRICE}}
+                        </div>
+                        <p class="text-xs mb-6" style="color: var(--text-muted);">{{PLAN_1_PERIOD}}</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_1_FEATURE_1}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_1_FEATURE_2}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_1_FEATURE_3}}
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="block w-full py-3 rounded-full text-center text-sm font-semibold border transition-all hover:bg-white/5"
+                            style="color: var(--accent); border-color: rgba(16,185,129,0.3);">
+                            {{PLAN_1_CTA}}
+                        </a>
+                    </div>
+
+                    <!-- Plan 2 (Popular) -->
+                    <div class="p-8 rounded-2xl border-2 relative shadow-xl"
+                        style="background: var(--bg); border-color: var(--accent); box-shadow: 0 0 30px var(--accent-glow);">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold"
+                            style="background: var(--accent); color: var(--bg);">
+                            {{PLAN_2_BADGE}}
+                        </div>
+                        <h3 class="font-heading text-lg font-semibold mb-2" style="color: var(--text);">{{PLAN_2_NAME}}
+                        </h3>
+                        <div class="text-3xl font-bold font-heading mb-1" style="color: var(--text);">{{PLAN_2_PRICE}}
+                        </div>
+                        <p class="text-xs mb-6" style="color: var(--text-muted);">{{PLAN_2_PERIOD}}</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_2_FEATURE_1}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_2_FEATURE_2}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_2_FEATURE_3}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_2_FEATURE_4}}
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="block w-full py-3 rounded-full text-center text-sm font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
+                            style="background: var(--accent); color: var(--bg);">
+                            {{PLAN_2_CTA}}
+                        </a>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="p-8 rounded-2xl border border-white/10" style="background: var(--bg);">
+                        <h3 class="font-heading text-lg font-semibold mb-2" style="color: var(--text);">{{PLAN_3_NAME}}
+                        </h3>
+                        <div class="text-3xl font-bold font-heading mb-1" style="color: var(--text);">{{PLAN_3_PRICE}}
+                        </div>
+                        <p class="text-xs mb-6" style="color: var(--text-muted);">{{PLAN_3_PERIOD}}</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_3_FEATURE_1}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_3_FEATURE_2}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_3_FEATURE_3}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_3_FEATURE_4}}
+                            </li>
+                            <li class="flex items-center gap-2 text-sm" style="color: var(--text-muted);">
+                                <i data-lucide="check" class="w-4 h-4" style="color: var(--accent);"></i>
+                                {{PLAN_3_FEATURE_5}}
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="block w-full py-3 rounded-full text-center text-sm font-semibold border transition-all hover:bg-white/5"
+                            style="color: var(--accent); border-color: rgba(16,185,129,0.3);">
+                            {{PLAN_3_CTA}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: FAQ                                  -->
+        <!-- ============================================= -->
+        <section id="faq" class="py-24 px-6" style="background: var(--bg);">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-5xl font-semibold tracking-tight mb-4"
+                        style="color: var(--text);">
+                        {{FAQ_TITLE}}
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <details class="group rounded-2xl border border-white/10 overflow-hidden"
+                        style="background: var(--surface);">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer p-6 text-sm font-semibold list-none"
+                            style="color: var(--text);">
+                            {{FAQ_1_Q}}
+                            <i data-lucide="plus" class="w-5 h-5 group-open:hidden"
+                                style="color: var(--text-muted);"></i>
+                            <i data-lucide="minus" class="w-5 h-5 hidden group-open:block"
+                                style="color: var(--accent);"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed" style="color: var(--text-muted);">
+                            {{FAQ_1_A}}
+                        </div>
+                    </details>
+
+                    <!-- FAQ 2 -->
+                    <details class="group rounded-2xl border border-white/10 overflow-hidden"
+                        style="background: var(--surface);">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer p-6 text-sm font-semibold list-none"
+                            style="color: var(--text);">
+                            {{FAQ_2_Q}}
+                            <i data-lucide="plus" class="w-5 h-5 group-open:hidden"
+                                style="color: var(--text-muted);"></i>
+                            <i data-lucide="minus" class="w-5 h-5 hidden group-open:block"
+                                style="color: var(--accent);"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed" style="color: var(--text-muted);">
+                            {{FAQ_2_A}}
+                        </div>
+                    </details>
+
+                    <!-- FAQ 3 -->
+                    <details class="group rounded-2xl border border-white/10 overflow-hidden"
+                        style="background: var(--surface);">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer p-6 text-sm font-semibold list-none"
+                            style="color: var(--text);">
+                            {{FAQ_3_Q}}
+                            <i data-lucide="plus" class="w-5 h-5 group-open:hidden"
+                                style="color: var(--text-muted);"></i>
+                            <i data-lucide="minus" class="w-5 h-5 hidden group-open:block"
+                                style="color: var(--accent);"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed" style="color: var(--text-muted);">
+                            {{FAQ_3_A}}
+                        </div>
+                    </details>
+
+                    <!-- FAQ 4 -->
+                    <details class="group rounded-2xl border border-white/10 overflow-hidden"
+                        style="background: var(--surface);">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer p-6 text-sm font-semibold list-none"
+                            style="color: var(--text);">
+                            {{FAQ_4_Q}}
+                            <i data-lucide="plus" class="w-5 h-5 group-open:hidden"
+                                style="color: var(--text-muted);"></i>
+                            <i data-lucide="minus" class="w-5 h-5 hidden group-open:block"
+                                style="color: var(--accent);"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-relaxed" style="color: var(--text-muted);">
+                            {{FAQ_4_A}}
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: FINAL CTA                            -->
+        <!-- ============================================= -->
+        <section id="cta" class="py-24 px-6 text-center relative overflow-hidden" style="background: var(--surface);">
+            <div class="glow-orb w-96 h-96 top-0 left-1/2 -translate-x-1/2 pulse-glow"
+                style="background: var(--accent);"></div>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight mb-6" style="color: var(--text);">
+                    {{CTA_TITLE}}
+                </h2>
+                <p class="text-lg mb-10" style="color: var(--text-muted);">
+                    {{CTA_SUBTITLE}}
+                </p>
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-10 py-5 rounded-full text-lg font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                    style="background: var(--accent); color: var(--bg); box-shadow: 0 0 30px var(--accent-glow);">
+                    {{CTA_BUTTON}}
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- SECTION: FOOTER                               -->
+        <!-- ============================================= -->
+        <footer class="py-12 px-6 border-t border-white/5" style="background: var(--bg);">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="font-heading text-lg font-bold mb-4" style="color: var(--text);">{{BRAND_NAME}}</div>
+                <p class="text-xs" style="color: var(--text-muted);">{{FOOTER_TEXT}}</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
