@@ -1,472 +1,156 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synapse - Ship Software Faster</title>
-
+    <title>{{global.page_title}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
-        /* RESET PLATFORM */
-        html, body, #__next, #page, #page-content, .section-components, div[class*="iciNCp"] {
-            background-color: transparent !important;
-            background-image: none !important;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            border: none !important;
+        :root {
+            /* Warna akan di-inject oleh BoopCopy */
+            --primary: #2563EB;
+            --bg: #FFFFFF;
+            --text: #1E293B;
         }
 
-        /* WARNA UTAMA */
         body {
-            background-color: #020617 !important;
-            color: #e2e8f0 !important;
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
         }
 
-        /* UTILITIES */
-        .glass {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 99px;
+            font-weight: 600;
+            transition: transform 0.2s;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            filter: brightness(110%);
         }
-        .border-glow:hover {
-            border-color: rgba(52, 211, 153, 0.5);
-            box-shadow: 0 0 30px -10px rgba(16, 185, 129, 0.3);
-        }
-        h1, h2, h3, h4, h5, h6 { color: #ffffff !important; }
-        .text-slate-400 { color: #94a3b8 !important; }
     </style>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        bg: '#020617',
-                        surface: '#0f172a',
-                        border: 'rgba(255, 255, 255, 0.1)',
-                        emerald: {
-                            400: '#34d399',
-                            500: '#10b981',
-                            glow: 'rgba(16, 185, 129, 0.4)'
-                        }
-                    },
-                    backgroundImage: {
-                        'hero-glow': 'radial-gradient(ellipse at top center, rgba(16, 185, 129, 0.15) 0%, rgba(2, 6, 23, 0) 70%)',
-                        'card-gradient': 'linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%)',
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden selection:bg-emerald-500 selection:text-white">
-    
-    <div class="isolate w-full min-h-screen bg-[#020617] text-slate-200 relative overflow-hidden">
+<body>
 
-        <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#020617]/80 backdrop-blur-xl transition-all">
-            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-[#020617] font-bold text-lg">S</div>
-                    <span class="font-bold text-xl tracking-tight text-white">Synapse</span>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-                    <a href="#features" class="hover:text-emerald-400 transition-colors">Platform</a>
-                    <a href="#workflow" class="hover:text-emerald-400 transition-colors">Workflow</a>
-                    <a href="#pricing" class="hover:text-emerald-400 transition-colors">Harga</a>
-                </div>
+    <!-- HERO SECTION -->
+    <header class="max-w-4xl mx-auto px-6 py-20 text-center">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-black/5 text-sm font-medium mb-6">{{hero.badge}}</span>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">{{hero.headline}}</h1>
+        <p class="text-xl opacity-80 mb-10 max-w-2xl mx-auto">{{hero.subheadline}}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#" class="btn-primary">{{hero.cta_primary}}</a>
+            <span class="text-sm opacity-60">{{hero.social_proof_label}}</span>
+        </div>
+    </header>
 
-                <div class="flex items-center gap-4">
-                    <a href="#" class="hidden md:block text-sm font-medium text-slate-400 hover:text-white">Masuk</a>
-                    <button class="bg-emerald-500 hover:bg-emerald-400 text-[#020617] font-bold px-5 py-2.5 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transform hover:-translate-y-0.5">
-                        Mulai Gratis
-                    </button>
-                </div>
+    <!-- DYNAMIC STORY SECTION (Hanya muncul jika AI generate Story) -->
+    <!-- BLOCK:story -->
+    <section class="max-w-3xl mx-auto px-6 py-16 border-t border-black/5">
+        <div class="prose prose-lg mx-auto">
+            <h3 class="font-serif text-3xl italic mb-6 text-center">{{title}}</h3>
+            <div class="opacity-80 leading-relaxed space-y-4">
+                {{content}}
             </div>
-        </nav>
+            <p class="mt-8 font-bold text-right">— {{signature}}</p>
+        </div>
+    </section>
+    <!-- ENDBLOCK -->
 
-        <section class="relative pt-32 pb-20 lg:pt-48 overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-[800px] bg-hero-glow -z-10 pointer-events-none"></div>
-            <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-10 animate-pulse-slow"></div>
-            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] -z-10 animate-pulse-slow"></div>
-
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-4xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-8 uppercase tracking-wider">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        AI Engine v2.0 Live Sekarang
+    <!-- DYNAMIC FEATURES LOOP -->
+    <section class="py-20 bg-black/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- BLOCK:features -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        ✨
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-8">
-                        Kelola Tim Engineering <br/>
-                        <span class="text-gradient">Tanpa Mikromanajemen</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto">
-                        Synapse mengotomatiskan pembagian tugas, sprint planning, dan daily standup. Biarkan tim Anda fokus coding, bukan meeting.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-[#020617] font-bold text-lg px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all hover:scale-105">
-                            Coba Demo Interaktif
-                        </button>
-                        <button class="w-full sm:w-auto glass text-white font-medium text-lg px-8 py-4 rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-                            <i class="ph ph-play-circle text-xl text-emerald-400"></i> Lihat Video
-                        </button>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3">{{title}}</h3>
+                    <p class="opacity-70 leading-relaxed">{{desc}}</p>
                 </div>
-
-                <div class="relative">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-2xl blur opacity-20"></div>
-                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#020617]">
-                        <div class="h-12 bg-[#0f172a] border-b border-white/5 flex items-center px-4 gap-2">
-                            <div class="flex gap-1.5">
-                                <div class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <div class="bg-[#020617] border border-white/5 rounded-md h-8 w-64 mx-auto flex items-center justify-center text-xs text-slate-600 font-mono">
-                                    app.synapse.com/dashboard/sprint-42
-                                </div>
-                            </div>
-                        </div>
-                        <img src="https://placehold.co/1200x700/0f172a/34d399?text=Dark+Mode+Dashboard+Interface" alt="Dashboard" class="w-full h-auto opacity-90">
-                        
-                        <div class="absolute bottom-10 left-10 glass p-4 rounded-xl border border-emerald-500/30 shadow-lg hidden md:flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
-                            <div class="bg-emerald-500/20 p-3 rounded-lg text-emerald-400">
-                                <i class="ph ph-check-circle text-2xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 uppercase tracking-wide">Sprint Velocity</p>
-                                <p class="text-xl font-bold text-white">+24%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- ENDBLOCK -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="py-12 border-y border-white/5 bg-white/[0.02]">
-            <div class="max-w-7xl mx-auto px-6 text-center">
-                <p class="text-sm font-medium text-slate-500 uppercase tracking-widest mb-8">Powering Next-Gen Teams At</p>
-                <div class="flex flex-wrap justify-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img src="https://placehold.co/120x40/020617/ffffff?text=TECH+CORP" alt="Logo">
-                    <img src="https://placehold.co/120x40/020617/ffffff?text=NEXUS+AI" alt="Logo">
-                    <img src="https://placehold.co/120x40/020617/ffffff?text=CLOUDBASE" alt="Logo">
-                    <img src="https://placehold.co/120x40/020617/ffffff?text=STARTUP+X" alt="Logo">
-                    <img src="https://placehold.co/120x40/020617/ffffff?text=FINTECH" alt="Logo">
+    <!-- DYNAMIC TESTIMONIALS LOOP -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Apa Kata Mereka?</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- BLOCK:testimonials -->
+                <div class="p-6 border border-black/10 rounded-2xl">
+                    <p class="text-lg italic mb-6">"{{quote}}"</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold">
+                            {{initial}}
+                        </div>
+                        <div>
+                            <div class="font-bold">{{name}}</div>
+                            <div class="text-xs opacity-60 uppercase tracking-wider">{{role}}</div>
+                        </div>
+                    </div>
                 </div>
+                <!-- ENDBLOCK -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="features" class="py-24 relative">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="mb-16 md:text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Satu Platform, <span class="text-emerald-400">Kontrol Penuh</span></h2>
-                    <p class="text-slate-400 text-lg">Tinggalkan spreadsheet berantakan dan tools yang tidak terintegrasi. Synapse menyatukan seluruh siklus pengembangan produk.</p>
+    <!-- DYNAMIC PRICING LOOP -->
+    <section class="py-20 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- BLOCK:pricing -->
+                <div class="p-8 rounded-3xl border border-white/20 relative overflow-hidden">
+                    <h3 class="text-xl font-bold mb-2 opacity-80">{{name}}</h3>
+                    <div class="text-4xl font-bold mb-1">{{price}}</div>
+                    <div class="text-sm opacity-50 mb-8">{{period}}</div>
+                    <ul class="space-y-3 mb-8 opacity-80 text-sm">
+                        <!-- Note: Nested loops (features inside pricing) not yet supported in v7.1 simple injector, 
+                             so we assume pricing features are pre-joined string or simple text for now -->
+                        <li>✅ Include All Features</li>
+                        <li>✅ 24/7 Support</li>
+                    </ul>
+                    <a href="#"
+                        class="block w-full py-3 bg-white text-black font-bold text-center rounded-xl hover:bg-gray-200 transition-colors">{{cta}}</a>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="md:col-span-2 glass p-8 md:p-12 rounded-3xl relative overflow-hidden group border-glow transition-all">
-                        <div class="relative z-10">
-                            <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20">
-                                <i class="ph ph-robot text-3xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-4">AI Project Manager</h3>
-                            <p class="text-slate-400 max-w-md mb-8">AI kami membaca commit git, update tiket, dan chat Slack untuk memperbarui status proyek secara otomatis. Tidak perlu lagi update manual.</p>
-                            <div class="flex gap-2">
-                                <span class="px-3 py-1 rounded-md bg-white/5 text-xs text-white border border-white/10">Automated Reports</span>
-                                <span class="px-3 py-1 rounded-md bg-white/5 text-xs text-white border border-white/10">Risk Detection</span>
-                            </div>
-                        </div>
-                        <img src="https://placehold.co/600x400/0f172a/34d399?text=AI+Chat+Analysis" class="absolute -right-10 -bottom-10 w-2/3 rounded-tl-2xl border-t border-l border-white/10 shadow-2xl opacity-80 group-hover:scale-105 transition-transform duration-500" alt="Feature">
-                    </div>
-
-                    <div class="glass p-8 rounded-3xl relative overflow-hidden group border-glow transition-all md:row-span-2">
-                        <div class="absolute top-0 right-0 p-32 bg-emerald-500/5 blur-[80px] rounded-full"></div>
-                        <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20">
-                            <i class="ph ph-git-merge text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Integrasi Git 2 Arah</h3>
-                        <p class="text-slate-400 mb-8">Tautkan PR ke tiket secara instan. Synapse mendeteksi konflik merge sebelum terjadi.</p>
-                        <div class="space-y-4">
-                            <img src="https://placehold.co/400x300/0f172a/60a5fa?text=Git+Workflow+Tree" class="w-full rounded-xl border border-white/10 shadow-lg" alt="Git">
-                            <div class="p-4 rounded-xl bg-[#020617] border border-white/5">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <i class="ph-fill ph-check-circle text-emerald-400"></i>
-                                    <span class="text-sm text-white font-mono">Deployment Successful</span>
-                                </div>
-                                <p class="text-xs text-slate-500">Deployed to production in 45s</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass p-8 rounded-3xl border-glow transition-all group">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 border border-purple-500/20">
-                                <i class="ph ph-users-three text-2xl"></i>
-                            </div>
-                            <span class="text-emerald-400 font-bold text-2xl">10x</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Kolaborasi Real-time</h3>
-                        <p class="text-slate-400 text-sm">Dokumen spek, kanban board, dan roadmap yang hidup.</p>
-                    </div>
-
-                    <div class="glass p-8 rounded-3xl border-glow transition-all group">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-yellow-400 border border-yellow-500/20">
-                                <i class="ph ph-lightning text-2xl"></i>
-                            </div>
-                            <span class="text-emerald-400 font-bold text-2xl">0ms</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Performa Native</h3>
-                        <p class="text-slate-400 text-sm">Dibangun dengan Rust. Secepat pikiran Anda, tanpa loading spinner.</p>
-                    </div>
-                </div>
+                <!-- ENDBLOCK -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="workflow" class="py-24 bg-[#0f172a]">
-            <div class="max-w-7xl mx-auto px-6 space-y-24">
-                <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-                    <div class="order-2 md:order-1 relative group">
-                        <div class="absolute -inset-2 bg-emerald-500/20 blur-2xl opacity-50 rounded-full group-hover:opacity-75 transition-opacity"></div>
-                        <img src="https://placehold.co/600x400/020617/34d399?text=Sprint+Planning+View" class="relative z-10 rounded-2xl border border-white/10 shadow-2xl w-full" alt="Feature">
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-3xl font-bold text-white mb-6">Sprint Planning dalam Hitungan Menit</h3>
-                        <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                            Drag-and-drop tiket backlog Anda. AI akan menyarankan kapasitas tim berdasarkan performa masa lalu (Velocity). Hindari burnout tim dengan data akurat.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-4 text-slate-300">
-                                <i class="ph-fill ph-check-circle text-emerald-400 text-xl"></i>
-                                Estimasi waktu otomatis
-                            </li>
-                            <li class="flex items-center gap-4 text-slate-300">
-                                <i class="ph-fill ph-check-circle text-emerald-400 text-xl"></i>
-                                Deteksi bottleneck dini
-                            </li>
-                            <li class="flex items-center gap-4 text-slate-300">
-                                <i class="ph-fill ph-check-circle text-emerald-400 text-xl"></i>
-                                Integrasi Jira Import 1-klik
-                            </li>
-                        </ul>
-                    </div>
+    <!-- DYNAMIC FAQ (Optional) -->
+    <!-- BLOCK:faq -->
+    <section class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <details class="group bg-black/5 rounded-2xl p-6 cursor-pointer">
+                <summary class="font-bold list-none flex justify-between items-center">
+                    {{q}}
+                    <span class="transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <div class="mt-4 opacity-70 leading-relaxed animate-fade-in">
+                    {{a}}
                 </div>
+            </details>
+        </div>
+    </section>
+    <!-- ENDBLOCK -->
 
-                <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold text-white mb-6">Dokumentasi yang Selalu "Fresh"</h3>
-                        <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                            Dokumen teknis biasanya kedaluwarsa dalam seminggu. Di Synapse, dokumen terikat langsung ke kode. Jika kode berubah, AI akan mengingatkan Anda untuk mengupdate dokumen.
-                        </p>
-                        <a href="#" class="text-emerald-400 font-bold hover:text-emerald-300 inline-flex items-center gap-2 group">
-                            Pelajari Workflow Docs <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                    <div class="relative group">
-                        <div class="absolute -inset-2 bg-blue-500/20 blur-2xl opacity-50 rounded-full group-hover:opacity-75 transition-opacity"></div>
-                        <img src="https://placehold.co/600x400/020617/60a5fa?text=Live+Docs+Editor" class="relative z-10 rounded-2xl border border-white/10 shadow-2xl w-full" alt="Feature">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- FOOTER -->
+    <footer class="py-10 text-center opacity-40 text-sm border-t border-black/5">
+        {{global.footer_text}}
+    </footer>
 
-        <section id="pricing" class="py-24 relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-            
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Investasi untuk Kecepatan</h2>
-                    <p class="text-slate-400">Harga transparan. Tanpa biaya tersembunyi per user tambahan di paket Starter.</p>
-                    
-                    <div class="flex items-center justify-center gap-4 mt-8">
-                        <span class="text-white font-medium">Bulanan</span>
-                        <div class="w-14 h-8 bg-[#0f172a] border border-white/10 rounded-full relative cursor-pointer px-1 flex items-center">
-                            <div class="w-6 h-6 bg-emerald-500 rounded-full shadow-md translate-x-6"></div>
-                        </div>
-                        <span class="text-slate-400 font-medium">Tahunan <span class="text-emerald-400 text-xs">(Hemat 20%)</span></span>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 items-start">
-                    <div class="glass p-8 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
-                        <h3 class="text-xl font-bold text-white mb-2">Starter</h3>
-                        <p class="text-slate-400 text-sm mb-6 min-h-[40px]">Untuk tim kecil yang baru mulai membangun produk.</p>
-                        <div class="flex items-baseline gap-1 mb-8">
-                            <span class="text-4xl font-bold text-white">Rp 0</span>
-                            <span class="text-slate-500">/selamanya</span>
-                        </div>
-                        <button class="w-full py-3 border border-white/20 rounded-xl text-white font-semibold hover:bg-white hover:text-[#020617] transition-all">
-                            Mulai Gratis
-                        </button>
-                        <div class="mt-8 space-y-4 text-sm text-slate-400">
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> Hingga 5 User</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> Basic Kanban</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> 1GB Storage</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> Komunitas Support</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#0f172a] p-8 rounded-2xl border border-emerald-500 shadow-[0_0_50px_rgba(16,185,129,0.15)] relative transform md:-translate-y-6 z-10">
-                        <div class="absolute top-0 right-0 bg-emerald-500 text-[#020617] text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">BEST VALUE</div>
-                        <h3 class="text-xl font-bold text-emerald-400 mb-2">Growth</h3>
-                        <p class="text-slate-400 text-sm mb-6 min-h-[40px]">Untuk startup yang scaling dengan cepat.</p>
-                        <div class="flex items-baseline gap-1 mb-8">
-                            <span class="text-4xl font-bold text-white">Rp 249k</span>
-                            <span class="text-slate-500">/bulan</span>
-                        </div>
-                        <button class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-[#020617] font-bold rounded-xl shadow-lg transition-all">
-                            Coba Trial 14 Hari
-                        </button>
-                        <div class="mt-8 space-y-4 text-sm text-slate-300">
-                            <p class="flex gap-3"><i class="ph-fill ph-check-circle text-emerald-400"></i> Hingga 50 User</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check-circle text-emerald-400"></i> AI Project Manager</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check-circle text-emerald-400"></i> Integrasi GitHub & GitLab</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check-circle text-emerald-400"></i> Laporan Velocity</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check-circle text-emerald-400"></i> Prioritas Support</p>
-                        </div>
-                    </div>
-
-                    <div class="glass p-8 rounded-2xl border border-white/5 hover:border-white/20 transition-all">
-                        <h3 class="text-xl font-bold text-white mb-2">Enterprise</h3>
-                        <p class="text-slate-400 text-sm mb-6 min-h-[40px]">Keamanan tingkat lanjut dan kontrol penuh.</p>
-                        <div class="flex items-baseline gap-1 mb-8">
-                            <span class="text-4xl font-bold text-white">Custom</span>
-                        </div>
-                        <button class="w-full py-3 border border-white/20 rounded-xl text-white font-semibold hover:bg-white hover:text-[#020617] transition-all">
-                            Kontak Sales
-                        </button>
-                        <div class="mt-8 space-y-4 text-sm text-slate-400">
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> Unlimited User</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> SSO & Audit Log</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> On-Premise Option</p>
-                            <p class="flex gap-3"><i class="ph-fill ph-check text-white"></i> Dedicated Success Manager</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white text-center mb-12">FAQ</h2>
-            <div class="space-y-4">
-                <details class="group glass rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 text-white font-medium hover:bg-white/5 transition">
-                        Apakah data kode kami aman?
-                        <i class="ph-bold ph-caret-down text-emerald-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-400 leading-relaxed">
-                        Kami menggunakan enkripsi AES-256 untuk data at rest dan TLS 1.3 untuk transit. Kami tersertifikasi SOC2 Type II dan tidak pernah menggunakan kode Anda untuk melatih model AI publik.
-                    </div>
-                </details>
-                <details class="group glass rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 text-white font-medium hover:bg-white/5 transition">
-                        Bisakah migrasi dari Jira?
-                        <i class="ph-bold ph-caret-down text-emerald-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-400 leading-relaxed">
-                        Ya, kami menyediakan alat import satu-klik. Cukup hubungkan akun Jira Anda, dan kami akan menarik semua tiket, epic, dan history komentar dalam beberapa menit.
-                    </div>
-                </details>
-                <details class="group glass rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between p-6 text-white font-medium hover:bg-white/5 transition">
-                        Apakah support metode Waterfall?
-                        <i class="ph-bold ph-caret-down text-emerald-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-slate-400 leading-relaxed">
-                        Synapse dioptimalkan untuk Agile dan Scrum, namun fleksibilitas board kami memungkinkan Anda mengatur workflow Waterfall atau Hybrid sesuai kebutuhan.
-                    </div>
-                </details>
-            </div>
-        </section>
-
-        <section class="py-24 px-6">
-            <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden relative border border-emerald-500/30">
-                <div class="absolute inset-0 bg-emerald-900/20 backdrop-blur-md"></div>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/20 rounded-full blur-[100px]"></div>
-                
-                <div class="relative z-10 px-6 py-20 text-center">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Jangan Biarkan Birokrasi <br/>Memperlambat Inovasi</h2>
-                    <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Bergabung dengan 10.000+ tim engineering yang telah beralih ke Synapse.</p>
-                    
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button class="bg-emerald-500 hover:bg-emerald-400 text-[#020617] font-bold text-lg px-10 py-4 rounded-xl shadow-xl transition-all hover:scale-105">
-                            Mulai Gratis Sekarang
-                        </button>
-                        <button class="border border-white/20 hover:bg-white/10 text-white font-medium text-lg px-10 py-4 rounded-xl transition-all">
-                            Hubungi Sales
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="border-t border-white/5 bg-[#020617] pt-16 pb-8">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-                    <div class="col-span-2">
-                        <div class="flex items-center gap-2 mb-6">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-[#020617] font-bold text-lg">S</div>
-                            <span class="font-bold text-xl text-white">Synapse</span>
-                        </div>
-                        <p class="text-slate-400 text-sm max-w-xs leading-relaxed mb-6">
-                            Platform manajemen proyek engineering #1 di Asia. Membantu tim mengirimkan software berkualitas lebih cepat.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
-                            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="ph-fill ph-linkedin-logo text-2xl"></i></a>
-                            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="ph-fill ph-github-logo text-2xl"></i></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-bold mb-6">Produk</h4>
-                        <ul class="space-y-4 text-sm text-slate-400">
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Fitur</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Roadmap</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Changelog</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Enterprise</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-bold mb-6">Perusahaan</h4>
-                        <ul class="space-y-4 text-sm text-slate-400">
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Tentang Kami</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Blog</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Karir</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Kontak</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-                    <p>&copy; 2024 Synapse Inc. All rights reserved.</p>
-                    <div class="flex gap-6 mt-4 md:mt-0">
-                        <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
-                        <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
 </body>
+
 </html>
