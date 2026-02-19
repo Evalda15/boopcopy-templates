@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Botanica - Natural Face Oil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        theme: {
+                            bg: '#faf7f2',
+                            surface: '#f5f0e8',
+                            text: '#2c2420',
+                            muted: '#8c7b6b',
+                            accent: '#c45d3e',
+                            btn: '#2c2420',
+                            btnHover: '#3d332d',
+                        }
+                    },
+                    borderRadius: {
+                        'theme': '1.5rem', // rounded-3xl
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Smoothness & Noise Texture for Organic Feel */
+        body {
+            background-color: #faf7f2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .text-balance { text-wrap: balance; }
+    </style>
+</head>
+<body class="font-sans text-theme-text antialiased selection:bg-theme-accent selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-[#faf7f2]/80 border-b border-[#e8e0d4]">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-serif text-2xl font-bold tracking-tight text-theme-text flex items-center gap-2">
+                <span class="text-theme-accent text-3xl">✿</span> Lumière.
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-theme-muted">
+                <a href="#manfaat" class="hover:text-theme-accent transition-colors">Manfaat</a>
+                <a href="#testimoni" class="hover:text-theme-accent transition-colors">Kata Mereka</a>
+                <a href="#harga" class="hover:text-theme-accent transition-colors">Harga</a>
+            </div>
+            <button class="bg-theme-btn text-[#faf7f2] px-6 py-2.5 rounded-full hover:bg-theme-btnHover transition-all shadow-lg font-medium text-sm">
+                Pesan Sekarang
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background Gradient blobs -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-[500px] h-[500px] bg-[#f5f0e8] rounded-full blur-3xl opacity-70 mix-blend-multiply"></div>
+            <div class="absolute top-40 right-10 w-[400px] h-[400px] bg-[#ffe4d6] rounded-full blur-3xl opacity-60 mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#e8e0d4] rounded-full shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-theme-muted">100% Organic Ingredients</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl lg:text-7xl leading-[1.1] text-theme-text">
+                    Kembalikan <span class="italic text-theme-accent">Glow Alami</span> Kulitmu Tanpa Kimia.
+                </h1>
+                
+                <p class="text-lg text-theme-muted leading-relaxed text-balance">
+                    Hentikan siklus iritasi akibat skincare keras. Lumière Botanica menutrisi hingga ke lapisan terdalam dengan 7 <i>rare oils</i>. Hasil terlihat dalam 7 hari pemakaian.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#harga" class="bg-theme-btn text-[#faf7f2] px-8 py-4 rounded-theme hover:bg-theme-btnHover transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 font-medium text-lg text-center">
+                        Mulai Transformasi Kulitku
+                    </a>
+                    <a href="#video" class="border border-theme-accent/30 text-theme-accent px-8 py-4 rounded-theme hover:bg-theme-accent/5 transition-all font-medium text-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Lihat Cara Kerja
+                    </a>
+                </div>
+                
+                <p class="text-sm text-theme-muted pt-2 flex items-center justify-center lg:justify-start gap-2">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    Terjual 10.000+ botol bulan ini
+                </p>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute inset-0 bg-[#c45d3e] rounded-theme rotate-3 opacity-10 group-hover:rotate-6 transition-transform duration-500"></div>
+                <img src="https://placehold.co/600x700/f5f0e8/2c2420?text=Lumiere+Bottle+Shot" alt="Lumière Product" class="relative w-full rounded-theme shadow-2xl border border-[#e8e0d4] object-cover">
+                
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-[#e8e0d4] flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                    <div class="bg-yellow-100 p-2 rounded-full text-yellow-700">★★★★★</div>
+                    <div>
+                        <p class="text-xs text-theme-muted font-bold uppercase">Rating</p>
+                        <p class="font-bold text-theme-text">4.9/5.0 (Verified)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS / SOCIAL PROOF -->
+    <section class="py-10 border-y border-[#e8e0d4] bg-white/50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm text-theme-muted font-medium mb-6 uppercase tracking-widest">Diliput & Direkomendasikan Oleh</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="https://placehold.co/120x40/faf7f2/2c2420?text=VOGUE" alt="Logo 1" class="h-8">
+                <img src="https://placehold.co/120x40/faf7f2/2c2420?text=ELLE" alt="Logo 2" class="h-8">
+                <img src="https://placehold.co/120x40/faf7f2/2c2420?text=BAZAAR" alt="Logo 3" class="h-8">
+                <img src="https://placehold.co/120x40/faf7f2/2c2420?text=FEMALE" alt="Logo 4" class="h-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM & AGITATION SECTION -->
+    <section class="py-24 bg-[#f5f0e8]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <img src="https://placehold.co/600x600/e8e0d4/2c2420?text=Stressed+Skin" alt="Masalah Kulit" class="rounded-theme shadow-lg border border-white">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-theme-accent/10 rounded-full blur-2xl"></div>
+                </div>
+                <div class="order-1 md:order-2 space-y-6">
+                    <h2 class="font-serif text-3xl md:text-4xl text-theme-text">
+                        Apakah Anda Lelah dengan Skincare yang <span class="text-theme-accent border-b-2 border-theme-accent/30">Janji Manis?</span>
+                    </h2>
+                    <p class="text-theme-muted text-lg leading-relaxed">
+                        Sebagian besar produk di pasaran mengandung <strong>Paraben, Alkohol, dan Pewangi Sintetis</strong> yang justru merusak <i>skin barrier</i> Anda dalam jangka panjang.
+                    </p>
+                    <ul class="space-y-4 mt-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">✕</span>
+                            <span class="text-theme-text font-medium">Kulit terasa kering & ketarik setelah cuci muka.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">✕</span>
+                            <span class="text-theme-text font-medium">Jerawat yang tak kunjung sembuh (breakout).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 text-xl">✕</span>
+                            <span class="text-theme-text font-medium">Wajah kusam meski sudah pakai berlapis-lapis produk.</span>
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <p class="italic text-theme-muted">"Kulit Anda tidak butuh lebih banyak bahan kimia. Kulit Anda butuh nutrisi murni."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION & BENEFITS -->
+    <section id="manfaat" class="py-24 bg-[#faf7f2]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-theme-accent font-bold tracking-widest text-xs uppercase mb-2 block">The Solution</span>
+                <h2 class="font-serif text-4xl text-theme-text mb-4">Nature's Miracle in a Bottle</h2>
+                <p class="text-theme-muted text-lg">Formula rahasia dari 7 ekstrak botani langka yang bekerja sinergis memperbaiki sel kulit Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white border border-[#e8e0d4] p-8 rounded-theme shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-[#f5f0e8] rounded-2xl flex items-center justify-center mb-6 text-theme-accent group-hover:bg-theme-accent group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Deep Hydration</h3>
+                    <p class="text-theme-muted">Partikel minyak mikro yang meresap hingga 10 lapisan kulit dalam 30 detik. Tidak lengket, hanya lembab.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border border-[#e8e0d4] p-8 rounded-theme shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-[#f5f0e8] rounded-2xl flex items-center justify-center mb-6 text-theme-accent group-hover:bg-theme-accent group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Skin Barrier Repair</h3>
+                    <p class="text-theme-muted">Memperbaiki lapisan pelindung kulit yang rusak akibat polusi dan makeup, mencegah jerawat balik lagi.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border border-[#e8e0d4] p-8 rounded-theme shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-[#f5f0e8] rounded-2xl flex items-center justify-center mb-6 text-theme-accent group-hover:bg-theme-accent group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Anti-Aging Alami</h3>
+                    <p class="text-theme-muted">Kaya akan antioksidan natural yang menyamarkan garis halus dan flek hitam dalam 21 hari pemakaian rutin.</p>
+                </div>
+            </div>
+            
+            <!-- Large Visual Breaker -->
+            <div class="mt-20 relative rounded-theme overflow-hidden h-[400px] shadow-lg group">
+                <img src="https://placehold.co/1200x600/2c2420/e8e0d4?text=Woman+Applying+Serum+Ideally" alt="Application" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div class="bg-white/90 backdrop-blur-sm p-8 rounded-theme text-center max-w-lg mx-4">
+                        <h3 class="font-serif text-2xl text-theme-text mb-2">"Investasi terbaik untuk diriku tahun ini."</h3>
+                        <p class="text-theme-accent font-medium">- Sarah, 28th, Karyawan Swasta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="harga" class="py-24 bg-[#f5f0e8] border-t border-[#e8e0d4]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl text-theme-text mb-4">Pilih Paket Perawatanmu</h2>
+                <p class="text-theme-muted">Garansi uang kembali 30 hari jika tidak cocok.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Basic -->
+                <div class="bg-[#faf7f2] border border-[#e8e0d4] p-8 rounded-theme">
+                    <h3 class="font-bold text-xl text-theme-text mb-2">Starter Kit</h3>
+                    <p class="text-theme-muted text-sm mb-6">Untuk pemula yang ingin mencoba.</p>
+                    <div class="text-4xl font-serif text-theme-text mb-6">Rp 199.000</div>
+                    <ul class="space-y-3 mb-8 text-sm text-theme-muted">
+                        <li class="flex gap-2"><span>✓</span> 1 Botol Lumière (20ml)</li>
+                        <li class="flex gap-2"><span>✓</span> Free Konsultasi Kulit</li>
+                        <li class="flex gap-2 text-gray-400"><span>✕</span> Free Ongkir</li>
+                    </ul>
+                    <button class="w-full border border-theme-accent/30 text-theme-accent py-3 rounded-xl hover:bg-theme-accent/5 transition-all font-medium">
+                        Beli Starter
+                    </button>
+                </div>
+
+                <!-- Best Seller -->
+                <div class="bg-white border-2 border-theme-accent p-8 rounded-theme shadow-xl relative scale-105 z-10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-theme-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-md">
+                        Most Popular
+                    </div>
+                    <h3 class="font-bold text-2xl text-theme-text mb-2">Glow Bundle</h3>
+                    <p class="text-theme-muted text-sm mb-6">Hasil maksimal pemakaian 2 bulan.</p>
+                    <div class="text-5xl font-serif text-theme-text mb-2">Rp 349.000</div>
+                    <p class="text-xs text-red-500 line-through mb-6">Rp 398.000</p>
+                    <ul class="space-y-3 mb-8 text-sm text-theme-text font-medium">
+                        <li class="flex gap-2 items-center"><span class="bg-green-100 text-green-600 rounded-full p-1 text-xs">✓</span> 2 Botol Lumière (Total 40ml)</li>
+                        <li class="flex gap-2 items-center"><span class="bg-green-100 text-green-600 rounded-full p-1 text-xs">✓</span> <span class="font-bold">GRATIS Ongkir Jawa-Bali</span></li>
+                        <li class="flex gap-2 items-center"><span class="bg-green-100 text-green-600 rounded-full p-1 text-xs">✓</span> Exclusive Jade Roller (Bonus)</li>
+                        <li class="flex gap-2 items-center"><span class="bg-green-100 text-green-600 rounded-full p-1 text-xs">✓</span> Priority Support</li>
+                    </ul>
+                    <button class="w-full bg-theme-accent text-white py-4 rounded-xl hover:bg-[#a0462e] transition-all font-bold shadow-lg shadow-orange-900/20">
+                        Ambil Promo Hemat Ini
+                    </button>
+                    <p class="text-xs text-center mt-3 text-theme-muted">Stok promo tersisa: <span class="text-red-500 font-bold">14 Paket</span></p>
+                </div>
+
+                <!-- Premium -->
+                <div class="bg-[#faf7f2] border border-[#e8e0d4] p-8 rounded-theme">
+                    <h3 class="font-bold text-xl text-theme-text mb-2">Family Pack</h3>
+                    <p class="text-theme-muted text-sm mb-6">Stok aman untuk 6 bulan.</p>
+                    <div class="text-4xl font-serif text-theme-text mb-6">Rp 699.000</div>
+                    <ul class="space-y-3 mb-8 text-sm text-theme-muted">
+                        <li class="flex gap-2"><span>✓</span> 4 Botol Lumière</li>
+                        <li class="flex gap-2"><span>✓</span> Free Ongkir Seluruh Indo</li>
+                        <li class="flex gap-2"><span>✓</span> VIP Access New Product</li>
+                    </ul>
+                    <button class="w-full border border-theme-accent/30 text-theme-accent py-3 rounded-xl hover:bg-theme-accent/5 transition-all font-medium">
+                        Beli Family Pack
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimoni" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-serif text-4xl text-center text-theme-text mb-16">Cerita Jujur Mereka</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#faf7f2] p-8 rounded-theme border border-[#e8e0d4]">
+                    <div class="flex gap-1 text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-lg text-theme-text italic mb-6">"Awalnya skeptis karena 'oil', takut jerawatan. Ternyata teksturnya ringan banget! Bekas jerawatku memudar dalam 2 minggu. Baunya juga enak banget, earthy gitu."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/e8e0d4/2c2420?text=AD" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <p class="font-bold text-theme-text">Andini Dwi</p>
+                            <p class="text-xs text-theme-muted">Mahasiswa, Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#faf7f2] p-8 rounded-theme border border-[#e8e0d4]">
+                    <div class="flex gap-1 text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-lg text-theme-text italic mb-6">"Saya punya kulit sensitif dan gampang merah. Lumière ini penyelamat. Begitu dipakai malam, paginya kulit tenang, kenyal, dan glowing natural. Fix langganan!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/100x100/e8e0d4/2c2420?text=RS" alt="User" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <p class="font-bold text-theme-text">Rina Santoso</p>
+                            <p class="text-xs text-theme-muted">Ibu Rumah Tangga, Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-[#f5f0e8]">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-serif text-3xl text-center text-theme-text mb-10">Pertanyaan Umum</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-2xl border border-[#e8e0d4] shadow-sm open:pb-4 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-theme-text list-none">
+                        Apakah aman untuk ibu hamil/menyusui?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-theme-muted px-6 leading-relaxed">Sangat aman. Produk kami 100% natural tanpa retinoid atau bahan kimia berbahaya. Namun, konsultasikan dengan dokter Anda untuk kepastian 100%.</p>
+                </details>
+                
+                <details class="group bg-white rounded-2xl border border-[#e8e0d4] shadow-sm open:pb-4 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-theme-text list-none">
+                        Berapa lama sampai hasilnya terlihat?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-theme-muted px-6 leading-relaxed">Untuk kelembapan, hasilnya instan. Untuk mencerahkan dan menyamarkan noda, rata-rata pengguna melihat hasil signifikan dalam 14-21 hari pemakaian rutin pagi dan malam.</p>
+                </details>
+
+                <details class="group bg-white rounded-2xl border border-[#e8e0d4] shadow-sm open:pb-4 transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-theme-text list-none">
+                        Apakah bikin wajah berminyak?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-theme-muted px-6 leading-relaxed">Tidak. Lumière diformulasikan sebagai "Dry Oil" yang cepat menyerap. Justru, minyak alami ini membantu menyeimbangkan produksi sebum di wajah Anda.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2c2420] text-[#faf7f2] py-16 rounded-t-[3rem] mt-10">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+            <div class="col-span-1 md:col-span-2">
+                <span class="font-serif text-3xl font-bold tracking-tight mb-4 block">Lumière.</span>
+                <p class="text-[#8c7b6b] max-w-sm mb-6">
+                    Misi kami adalah menghadirkan kemewahan alam ke dalam rutinitas harian Anda. Cantik itu tidak harus menyakitkan.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-[#3d332d] rounded-full flex items-center justify-center hover:bg-[#c45d3e] transition-colors">IG</a>
+                    <a href="#" class="w-10 h-10 bg-[#3d332d] rounded-full flex items-center justify-center hover:bg-[#c45d3e] transition-colors">TT</a>
+                    <a href="#" class="w-10 h-10 bg-[#3d332d] rounded-full flex items-center justify-center hover:bg-[#c45d3e] transition-colors">WA</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4 text-[#c45d3e]">Menu</h4>
+                <ul class="space-y-2 text-[#8c7b6b]">
+                    <li><a href="#" class="hover:text-white">Shop All</a></li>
+                    <li><a href="#" class="hover:text-white">Our Story</a></li>
+                    <li><a href="#" class="hover:text-white">Ingredients</a></li>
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-[#c45d3e]">Hubungi Kami</h4>
+                <p class="text-[#8c7b6b] mb-2">Jl. Senopati No. 88, Jakarta Selatan</p>
+                <p class="text-[#8c7b6b] mb-2">hello@lumierebotanica.id</p>
+                <p class="text-[#8c7b6b]">+62 812 3456 7890</p>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 mt-16 pt-8 border-t border-[#3d332d] text-center text-[#8c7b6b] text-sm">
+            &copy; 2024 Lumière Botanica Indonesia. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 w-full p-4 bg-white/90 backdrop-blur-md border-t border-[#e8e0d4] md:hidden z-50">
+        <a href="#harga" class="block w-full bg-theme-accent text-white text-center py-3 rounded-xl font-bold shadow-lg hover:bg-[#a0462e]">
+            Beli Sekarang - Diskon 20%
+        </a>
+    </div>
+
+</body>
+</html>
