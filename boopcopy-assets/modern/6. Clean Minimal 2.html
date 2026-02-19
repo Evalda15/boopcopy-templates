@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Pure X | Minimalist Air Purifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6', // Clean Blue
+                            600: '#2563eb',
+                            900: '#0f172a', // Slate Dark
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 40px -10px rgba(59, 130, 246, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+        
+        /* Soft Gradient Background Animation */
+        .gradient-bg {
+            background: linear-gradient(120deg, #f0f9ff 0%, #ffffff 50%, #eff6ff 100%);
+            background-size: 200% 200%;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-600 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                <span class="font-semibold text-xl tracking-tight text-slate-900">Aura<span class="text-brand-600">Pure</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+                <a href="#fitur" class="hover:text-brand-600 transition-colors">Teknologi</a>
+                <a href="#manfaat" class="hover:text-brand-600 transition-colors">Kesehatan</a>
+                <a href="#harga" class="hover:text-brand-600 transition-colors">Harga</a>
+            </div>
+
+            <button class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-slate-800 transition-all shadow-soft text-sm font-medium">
+                Pesan Sekarang
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 gradient-bg overflow-hidden">
+        <!-- Decorative Soft Blobs -->
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-[400px] h-[400px] bg-slate-100 rounded-full blur-3xl opacity-60 mix-blend-multiply pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wide text-brand-600">New Gen 2.0 HEPA</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                    Udara Murni.<br>
+                    <span class="text-brand-600">Desain Estetik.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-500 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Bersihkan 99.97% polutan di rumah Anda tanpa merusak estetika ruangan. Hening, pintar, dan menyatu sempurna dengan interior modern.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#harga" class="bg-brand-600 text-white px-8 py-4 rounded-full hover:bg-brand-500 transition-all shadow-glow font-medium text-center">
+                        Miliki Aura Pure X
+                    </a>
+                    <a href="#video" class="group bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-full hover:border-brand-200 hover:text-brand-600 transition-all font-medium flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Lihat Demo
+                    </a>
+                </div>
+                
+                <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 text-sm text-slate-400">
+                    <div class="flex -space-x-2">
+                        <img class="w-8 h-8 rounded-full border-2 border-white" src="https://placehold.co/100x100/eee/333?text=U1" alt="User">
+                        <img class="w-8 h-8 rounded-full border-2 border-white" src="https://placehold.co/100x100/ddd/333?text=U2" alt="User">
+                        <img class="w-8 h-8 rounded-full border-2 border-white" src="https://placehold.co/100x100/ccc/333?text=U3" alt="User">
+                    </div>
+                    <p>Dicintai oleh 2.000+ Keluarga Modern</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative z-10 bg-white">
+                    <img src="https://placehold.co/800x1000/ffffff/e2e8f0?text=Minimalist+Air+Purifier+Product+Shot" alt="Aura Pure X" class="w-full h-full object-cover">
+                </div>
+                <!-- Abstract Elements behind image -->
+                <div class="absolute -bottom-10 -left-10 w-full h-full border border-slate-200 rounded-[2rem] -z-10"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST LOGOS -->
+    <section class="py-10 border-y border-slate-50 bg-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-12 opacity-40 grayscale">
+            <img src="https://placehold.co/120x40/fff/333?text=TechDaily" class="h-8">
+            <img src="https://placehold.co/120x40/fff/333?text=HomeLiving" class="h-8">
+            <img src="https://placehold.co/120x40/fff/333?text=DesignAward" class="h-8">
+            <img src="https://placehold.co/120x40/fff/333?text=Minimalist" class="h-8">
+        </div>
+    </section>
+
+    <!-- PROBLEM / SOLUTION -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-brand-600 font-semibold tracking-wider uppercase text-xs mb-3 block">Masalah Polusi Indoor</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Rumah Anda Mungkin Tidak Sebersih yang Anda Kira.</h2>
+                <p class="text-slate-500 text-lg">Debu mikroskopis, bulu hewan, dan senyawa organik yang mudah menguap (VOC) menumpuk di dalam ruangan tertutup. Jangan biarkan paru-paru Anda menjadi filternya.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-soft transition-all duration-300 group border border-transparent hover:border-slate-100">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-brand-600 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">HEPA-13 Filtration</h3>
+                    <p class="text-slate-500 leading-relaxed">Menangkap 99.97% partikel sekecil 0.3 mikron. Termasuk virus, bakteri, dan alergen.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-soft transition-all duration-300 group border border-transparent hover:border-slate-100">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-brand-600 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ultra-Silent Motor</h3>
+                    <p class="text-slate-500 leading-relaxed">Beroperasi pada 20dB di mode malam. Lebih hening daripada suara bisikan di perpustakaan.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-soft transition-all duration-300 group border border-transparent hover:border-slate-100">
+                    <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-brand-600 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">App Control</h3>
+                    <p class="text-slate-500 leading-relaxed">Pantau kualitas udara secara real-time dan kendalikan dari mana saja melalui smartphone Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIG IMAGE SHOWCASE -->
+    <section id="manfaat" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 relative">
+                <img src="https://placehold.co/800x800/e2e8f0/64748b?text=Clean+Minimalist+Room" alt="Living Room" class="rounded-[2rem] shadow-xl w-full">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-lg border border-slate-100 max-w-xs hidden md:block">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="font-bold text-slate-900">Kualitas Udara: Sempurna</span>
+                    </div>
+                    <p class="text-sm text-slate-500">PM2.5 Index saat ini: 4 (Sangat Bersih)</p>
+                </div>
+            </div>
+            
+            <div class="order-1 md:order-2 space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+                    Menyatu Sempurna dengan <span class="text-brand-600">Gaya Hidup</span> Anda.
+                </h2>
+                <p class="text-slate-500 text-lg leading-relaxed">
+                    Kami percaya perangkat elektronik rumah tangga tidak harus terlihat mencolok atau jelek. Aura Pure X didesain dengan prinsip "Invisible Tech" – bekerja keras tanpa meminta perhatian.
+                </p>
+                <ul class="space-y-4 pt-4">
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs">✓</span>
+                        Hemat Energi (Hanya 30W)
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs">✓</span>
+                        Auto Mode (Sensor Pintar)
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs">✓</span>
+                        Garansi 2 Tahun
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="harga" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background blob -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-50 rounded-full blur-3xl opacity-60 -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Investasi untuk Jangka Panjang</h2>
+                <p class="text-slate-500">Udara bersih bukan kemewahan, tapi kebutuhan.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+                
+                <!-- Basic Plan -->
+                <div class="bg-white border border-slate-200 p-8 rounded-[2rem] hover:shadow-lg transition-shadow">
+                    <div class="mb-4">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Single Unit</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Aura Pure X</h3>
+                    <p class="text-slate-500 text-sm mb-6">Cocok untuk kamar tidur atau studio apartemen.</p>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-bold text-slate-900">Rp 1.899.000</span>
+                    </div>
+                    <button class="w-full border border-slate-300 text-slate-700 py-3 rounded-xl hover:bg-slate-50 transition-colors font-medium mb-6">
+                        Pilih Paket Ini
+                    </button>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex gap-2"><span>•</span> Cakupan area 30m²</li>
+                        <li class="flex gap-2"><span>•</span> 1x Filter HEPA Termasuk</li>
+                        <li class="flex gap-2"><span>•</span> Gratis Ongkir Jawa-Bali</li>
+                    </ul>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-white border-2 border-brand-500 p-8 rounded-[2rem] shadow-soft relative transform md:scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white px-4 py-1.5 rounded-bl-2xl rounded-tr-xl text-xs font-bold tracking-wide">
+                        BEST VALUE
+                    </div>
+                    <div class="mb-4">
+                        <span class="bg-brand-50 text-brand-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Home Bundle</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Aura Pure X (Twin Pack)</h3>
+                    <p class="text-slate-500 text-sm mb-6">Solusi total untuk ruang tamu & kamar utama.</p>
+                    <div class="flex items-baseline gap-1 mb-2">
+                        <span class="text-4xl font-bold text-slate-900">Rp 3.499.000</span>
+                        <span class="text-slate-400 line-through text-sm">Rp 3.798.000</span>
+                    </div>
+                    <p class="text-xs text-green-600 font-medium mb-6">Hemat Rp 300.000 hari ini</p>
+                    
+                    <button class="w-full bg-brand-600 text-white py-4 rounded-xl hover:bg-brand-700 transition-colors font-bold shadow-lg shadow-brand-200 mb-6">
+                        Beli Bundle Hemat
+                    </button>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex gap-2 text-slate-900 font-medium"><span>✓</span> 2 Unit Aura Pure X</li>
+                        <li class="flex gap-2 text-slate-900 font-medium"><span>✓</span> 2x Filter Cadangan (Bonus)</li>
+                        <li class="flex gap-2"><span>•</span> Prioritas Pengiriman</li>
+                        <li class="flex gap-2"><span>•</span> Akses Fitur Premium App</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-2xl font-bold text-center mb-10 text-slate-900">Pertanyaan Umum</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer open:ring-2 open:ring-brand-100 transition-all">
+                    <summary class="flex justify-between items-center font-medium list-none text-slate-800">
+                        Berapa lama filter bertahan?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-slate-500 mt-4 leading-relaxed">
+                        Untuk pemakaian normal (8-12 jam sehari), filter HEPA-13 kami bertahan selama 6-8 bulan. Aplikasi akan memberi notifikasi saat filter perlu diganti.
+                    </p>
+                </details>
+                
+                <details class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer open:ring-2 open:ring-brand-100 transition-all">
+                    <summary class="flex justify-between items-center font-medium list-none text-slate-800">
+                        Apakah boros listrik?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-slate-500 mt-4 leading-relaxed">
+                        Sangat hemat. Dengan daya maksimum 30 Watt, biaya listriknya kurang dari Rp 10.000 per bulan jika dinyalakan setiap malam.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer open:ring-2 open:ring-brand-100 transition-all">
+                    <summary class="flex justify-between items-center font-medium list-none text-slate-800">
+                        Apakah berisik saat tidur?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-slate-500 mt-4 leading-relaxed">
+                        Di mode malam (Sleep Mode), Aura Pure X mematikan semua lampu indikator dan menurunkan kecepatan kipas hingga suara hampir tidak terdengar (20dB).
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 mb-12">
+            <div class="col-span-1 md:col-span-2">
+                <span class="font-bold text-xl tracking-tight text-slate-900 block mb-4">Aura<span class="text-brand-600">Pure</span></span>
+                <p class="text-slate-500 max-w-sm text-sm leading-relaxed">
+                    Menciptakan ekosistem rumah sehat dengan teknologi pintar dan desain yang menghargai ketenangan visual.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-slate-900 mb-4 text-sm">Produk</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-brand-600">Aura Pure X</a></li>
+                    <li><a href="#" class="hover:text-brand-600">Replacement Filters</a></li>
+                    <li><a href="#" class="hover:text-brand-600">Aura Mini (Car)</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-slate-900 mb-4 text-sm">Dukungan</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-brand-600">Pusat Bantuan</a></li>
+                    <li><a href="#" class="hover:text-brand-600">Garansi & Retur</a></li>
+                    <li><a href="#" class="hover:text-brand-600">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <p>&copy; 2024 Aura Pure Indonesia. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-brand-600">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-600">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 w-full p-4 bg-white/80 backdrop-blur-lg border-t border-slate-200 md:hidden z-50">
+        <div class="flex gap-3 items-center">
+            <div class="flex-1">
+                <p class="text-xs text-slate-500">Mulai dari</p>
+                <p class="text-slate-900 font-bold">Rp 1.899.000</p>
+            </div>
+            <a href="#harga" class="bg-brand-600 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-brand-200 hover:bg-brand-700">
+                Beli Sekarang
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
