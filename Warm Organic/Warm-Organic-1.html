@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERRA - Rawat Kulit, Rawat Bumi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        organic: {
+                            bg: '#faf7f2',
+                            surface: '#f5f0e8',
+                            card: '#ffffff',
+                            border: '#e8e0d4',
+                            text: '#2c2420',
+                            muted: '#8c7b6b',
+                            accent: '#c45d3e',
+                            accentLight: '#eecdc2',
+                        }
+                    },
+                    borderRadius: {
+                        '3xl': '1.5rem',
+                        '4xl': '2rem',
+                    },
+                    backgroundImage: {
+                        'soft-gradient': 'linear-gradient(120deg, #faf7f2 0%, #f5f0e8 100%)',
+                        'warm-glow': 'radial-gradient(circle at 50% 50%, rgba(196, 93, 62, 0.1) 0%, rgba(250, 247, 242, 0) 70%)',
+                    },
+                    animation: {
+                        'breathe': 'breathe 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #faf7f2;
+            color: #2c2420;
+        }
+        .btn-organic {
+            background-color: #2c2420;
+            color: #faf7f2;
+            transition: all 0.3s ease;
+        }
+        .btn-organic:hover {
+            background-color: #3d332d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(44, 36, 32, 0.3);
+        }
+        /* Soft shadows fitting the theme */
+        .shadow-organic {
+            box-shadow: 0 4px 20px -2px rgba(196, 93, 62, 0.05), 0 0 3px rgba(0,0,0,0.02);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-[#c45d3e] selection:text-white">
+
+    <!-- Navbar (Floating Pill) -->
+    <nav class="fixed w-full z-50 top-6 px-4">
+        <div class="max-w-5xl mx-auto bg-white/80 backdrop-blur-md border border-[#e8e0d4] rounded-full shadow-organic py-3 px-6 flex justify-between items-center transition-all">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-[#c45d3e] flex items-center justify-center text-white">
+                    <i class="ph-fill ph-plant"></i>
+                </div>
+                <span class="font-serif font-semibold text-xl tracking-tight text-[#2c2420]">TERRA</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-[#8c7b6b]">
+                <a href="#benefits" class="hover:text-[#c45d3e] transition-colors">Manfaat</a>
+                <a href="#ingredients" class="hover:text-[#c45d3e] transition-colors">Bahan Alami</a>
+                <a href="#reviews" class="hover:text-[#c45d3e] transition-colors">Cerita</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#shop" class="hidden md:block text-[#c45d3e] font-medium hover:underline decoration-[#c45d3e]/30 underline-offset-4">Masuk</a>
+                <a href="#shop" class="bg-[#2c2420] text-[#faf7f2] hover:bg-[#3d332d] px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-xl">
+                    Belanja (0)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Organic Blobs Background -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#c45d3e]/5 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/4 animate-breathe"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#e8e0d4] rounded-full blur-[80px] -z-10 -translate-x-1/3 translate-y-1/4"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <span class="inline-block py-1 px-3 rounded-full bg-[#c45d3e]/10 text-[#c45d3e] font-medium text-xs tracking-wider uppercase mb-6">
+                        100% Vegan & Cruelty Free
+                    </span>
+                    <h1 class="font-serif text-5xl lg:text-7xl leading-[1.1] mb-6 text-[#2c2420]">
+                        Kembalikan <span class="italic text-[#c45d3e]">Glow</span> Alami Kulitmu.
+                    </h1>
+                    <p class="text-lg text-[#8c7b6b] mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                        Skincare organik yang diformulasikan dari 12 tanaman adaptogenik. Tanpa paraben, tanpa pewangi buatan, hanya kebaikan bumi untuk menenangkan kulit sensitif Anda.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#shop" class="btn-organic px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2">
+                            Mulai Ritual Sehat
+                        </a>
+                        <a href="#video" class="border border-[#c45d3e]/30 text-[#c45d3e] hover:bg-[#c45d3e]/5 px-8 py-4 rounded-full font-medium text-lg transition-all flex items-center justify-center gap-2">
+                            <i class="ph-fill ph-play-circle text-xl"></i> Lihat Hasilnya
+                        </a>
+                    </div>
+
+                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-4">
+                        <div class="flex -space-x-4">
+                            <img class="w-12 h-12 rounded-full border-4 border-[#faf7f2]" src="https://placehold.co/100x100/e8e0d4/c45d3e?text=A" alt="User">
+                            <img class="w-12 h-12 rounded-full border-4 border-[#faf7f2]" src="https://placehold.co/100x100/dccdbb/c45d3e?text=B" alt="User">
+                            <img class="w-12 h-12 rounded-full border-4 border-[#faf7f2]" src="https://placehold.co/100x100/cbbba0/c45d3e?text=C" alt="User">
+                        </div>
+                        <div class="text-sm">
+                            <div class="flex text-[#c45d3e]">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="text-[#8c7b6b]">4.9/5 dari 2,000+ wanita.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative order-1 lg:order-2">
+                    <div class="relative z-10 grid grid-cols-2 gap-4">
+                        <img src="https://placehold.co/400x500/f5f0e8/c45d3e?text=Organic+Serum+Bottle" class="rounded-t-full rounded-b-3xl w-full h-full object-cover shadow-organic mt-12" alt="Product 1">
+                        <img src="https://placehold.co/400x500/e8e0d4/c45d3e?text=Woman+Applying+Cream" class="rounded-t-3xl rounded-b-full w-full h-full object-cover shadow-organic" alt="Lifestyle">
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[#c45d3e]/20 rounded-full animate-spin-slow"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Logo Cloud / Trusted By -->
+    <section class="py-10 border-y border-[#e8e0d4] bg-[#fdfbf9]">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm font-medium text-[#8c7b6b] uppercase tracking-widest mb-6">Diliput oleh majalah kecantikan</p>
+            <div class="flex flex-wrap justify-center gap-12 lg:gap-20 opacity-40 grayscale mix-blend-multiply">
+                <img src="https://placehold.co/120x40/2c2420/faf7f2?text=ELLE" alt="Logo">
+                <img src="https://placehold.co/120x40/2c2420/faf7f2?text=VOGUE" alt="Logo">
+                <img src="https://placehold.co/120x40/2c2420/faf7f2?text=BAZAAR" alt="Logo">
+                <img src="https://placehold.co/120x40/2c2420/faf7f2?text=ALLURE" alt="Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution (The Philosophy) -->
+    <section id="benefits" class="py-24 bg-[#fff]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-5xl text-[#2c2420] mb-6">Kulit Anda Tidak Butuh Lebih Banyak Kimia</h2>
+                <p class="text-[#8c7b6b] text-lg">
+                    Polusi kota dan produk keras merusak *skin barrier* alami Anda. Terra hadir untuk menekan tombol 'reset'.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-[#faf7f2] p-8 rounded-3xl border border-[#e8e0d4] hover:border-[#c45d3e]/30 transition-all group">
+                    <div class="w-14 h-14 bg-[#fff] rounded-2xl flex items-center justify-center text-[#c45d3e] text-2xl shadow-sm mb-6 group-hover:bg-[#c45d3e] group-hover:text-white transition-colors">
+                        <i class="ph ph-drop"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-3">Hidrasi Mendalam</h3>
+                    <p class="text-[#8c7b6b]">Molekul Hyaluronic Acid alami dari jamur salju menembus 3 lapisan kulit untuk kelembaban 24 jam.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#faf7f2] p-8 rounded-3xl border border-[#e8e0d4] hover:border-[#c45d3e]/30 transition-all group">
+                    <div class="w-14 h-14 bg-[#fff] rounded-2xl flex items-center justify-center text-[#c45d3e] text-2xl shadow-sm mb-6 group-hover:bg-[#c45d3e] group-hover:text-white transition-colors">
+                        <i class="ph ph-shield-check"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-3">Perbaikan Barrier</h3>
+                    <p class="text-[#8c7b6b]">Ceramide kompleks dari minyak oat memperkuat pertahanan kulit terhadap iritasi dan kemerahan.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#faf7f2] p-8 rounded-3xl border border-[#e8e0d4] hover:border-[#c45d3e]/30 transition-all group">
+                    <div class="w-14 h-14 bg-[#fff] rounded-2xl flex items-center justify-center text-[#c45d3e] text-2xl shadow-sm mb-6 group-hover:bg-[#c45d3e] group-hover:text-white transition-colors">
+                        <i class="ph ph-leaf"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold mb-3">Anti-Aging Alami</h3>
+                    <p class="text-[#8c7b6b]">Bakuchiol (alternatif Retinol alami) mengurangi garis halus tanpa efek samping pengelupasan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Highlight (Image Heavy) -->
+    <section id="ingredients" class="py-24 bg-[#f5f0e8] relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://placehold.co/400x400/fff/c45d3e?text=Lavender+Flower" class="rounded-3xl shadow-organic hover:scale-105 transition-transform duration-500" alt="Ingredient">
+                        <img src="https://placehold.co/400x400/fff/c45d3e?text=Oat+Grain" class="rounded-3xl shadow-organic translate-y-8 hover:scale-105 transition-transform duration-500" alt="Ingredient">
+                        <img src="https://placehold.co/400x400/fff/c45d3e?text=Tea+Tree" class="rounded-3xl shadow-organic hover:scale-105 transition-transform duration-500" alt="Ingredient">
+                        <img src="https://placehold.co/400x400/fff/c45d3e?text=Aloe+Vera" class="rounded-3xl shadow-organic translate-y-8 hover:scale-105 transition-transform duration-500" alt="Ingredient">
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-[#c45d3e] font-serif italic text-xl mb-2 block">Transparansi Radikal</span>
+                    <h2 class="text-4xl font-serif font-bold text-[#2c2420] mb-6">Jika Kami Tak Bisa Memakannya, Kami Tak Memakainya.</h2>
+                    <p class="text-[#8c7b6b] text-lg mb-8">
+                        Industri kecantikan menyembunyikan ribuan bahan kimia berbahaya di balik label "Fragrance". Di Terra, setiap bahan dipilih dengan tangan dari petani organik lokal.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 text-[#2c2420] font-medium p-3 bg-white/50 rounded-2xl border border-[#e8e0d4]">
+                            <span class="w-8 h-8 rounded-full bg-[#c45d3e]/10 flex items-center justify-center text-[#c45d3e]"><i class="ph-fill ph-x"></i></span>
+                            Tanpa Paraben, Sulfat, & Silikon
+                        </li>
+                        <li class="flex items-center gap-4 text-[#2c2420] font-medium p-3 bg-white/50 rounded-2xl border border-[#e8e0d4]">
+                            <span class="w-8 h-8 rounded-full bg-[#c45d3e]/10 flex items-center justify-center text-[#c45d3e]"><i class="ph-fill ph-x"></i></span>
+                            Tanpa Pewangi Sintetis
+                        </li>
+                        <li class="flex items-center gap-4 text-[#2c2420] font-medium p-3 bg-white/50 rounded-2xl border border-[#e8e0d4]">
+                            <span class="w-8 h-8 rounded-full bg-[#c45d3e]/10 flex items-center justify-center text-[#c45d3e]"><i class="ph-fill ph-check"></i></span>
+                            Dermatologically Tested
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Shop Section -->
+    <section id="shop" class="py-24 bg-[#faf7f2]">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-serif text-4xl font-bold text-[#2c2420] mb-4">Pilih Ritual Anda</h2>
+                <p class="text-[#8c7b6b]">Investasi terbaik untuk kulit masa depan Anda. Hemat hingga 20% dengan paket bundle.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Basic -->
+                <div class="bg-white rounded-3xl border border-[#e8e0d4] p-8 shadow-sm hover:shadow-organic transition-all">
+                    <h3 class="font-serif text-2xl text-[#2c2420] mb-2">The Starter</h3>
+                    <p class="text-[#8c7b6b] text-sm mb-6 h-10">Cukup untuk memulai perjalanan kulit sehat.</p>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-3xl font-bold text-[#2c2420]">Rp 299k</span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex gap-3">
+                            <img src="https://placehold.co/40x40/f5f0e8/c45d3e" class="rounded-lg" alt="Icon">
+                            <div class="text-sm"><p class="font-bold text-[#2c2420]">Gentle Cleanser</p><p class="text-[#8c7b6b]">100ml</p></div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="https://placehold.co/40x40/f5f0e8/c45d3e" class="rounded-lg" alt="Icon">
+                            <div class="text-sm"><p class="font-bold text-[#2c2420]">Daily Moisturizer</p><p class="text-[#8c7b6b]">50ml</p></div>
+                        </div>
+                    </div>
+
+                    <button class="w-full border border-[#2c2420] text-[#2c2420] font-medium py-3 rounded-xl hover:bg-[#faf7f2] transition-colors">
+                        Beli Paket Starter
+                    </button>
+                </div>
+
+                <!-- Best Seller -->
+                <div class="bg-[#2c2420] rounded-3xl border border-[#2c2420] p-8 shadow-xl transform md:-translate-y-6 relative text-[#faf7f2]">
+                    <div class="absolute top-0 right-0 bg-[#c45d3e] text-white text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-2xl">FAVORIT</div>
+                    <h3 class="font-serif text-2xl text-white mb-2">The Glow Ritual</h3>
+                    <p class="text-[#8c7b6b] text-sm mb-6 h-10">Rutinitas lengkap pagi & malam.</p>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-4xl font-bold text-white">Rp 549k</span>
+                        <span class="text-sm text-[#8c7b6b] line-through">Rp 650k</span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white"><i class="ph-fill ph-check"></i></div>
+                            <div class="text-sm"><p class="font-bold text-white">Semua di Starter Pack</p></div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="https://placehold.co/40x40/3d332d/c45d3e" class="rounded-lg" alt="Icon">
+                            <div class="text-sm"><p class="font-bold text-white">Vitamin C Serum</p><p class="text-[#8c7b6b]">30ml</p></div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="https://placehold.co/40x40/3d332d/c45d3e" class="rounded-lg" alt="Icon">
+                            <div class="text-sm"><p class="font-bold text-white">Night Repair Oil</p><p class="text-[#8c7b6b]">30ml</p></div>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-[#c45d3e] text-white font-medium py-4 rounded-xl hover:bg-[#a0462c] transition-colors shadow-lg">
+                        Beli Paket Glow
+                    </button>
+                    <p class="text-center text-xs text-[#8c7b6b] mt-4 flex items-center justify-center gap-1"><i class="ph-fill ph-truck"></i> Gratis Ongkir ke Seluruh Indonesia</p>
+                </div>
+
+                <!-- Complete -->
+                <div class="bg-white rounded-3xl border border-[#e8e0d4] p-8 shadow-sm hover:shadow-organic transition-all">
+                    <h3 class="font-serif text-2xl text-[#2c2420] mb-2">Spa at Home</h3>
+                    <p class="text-[#8c7b6b] text-sm mb-6 h-10">Pengalaman relaksasi total mingguan.</p>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-3xl font-bold text-[#2c2420]">Rp 899k</span>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 bg-[#f5f0e8] rounded-lg flex items-center justify-center text-[#2c2420]"><i class="ph-fill ph-check"></i></div>
+                            <div class="text-sm"><p class="font-bold text-[#2c2420]">Semua di Glow Ritual</p></div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="https://placehold.co/40x40/f5f0e8/c45d3e" class="rounded-lg" alt="Icon">
+                            <div class="text-sm"><p class="font-bold text-[#2c2420]">Clay Mask</p><p class="text-[#8c7b6b]">100g</p></div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="https://placehold.co/40x40/f5f0e8/c45d3e" class="rounded-lg" alt="Icon">
+                            <div class="text-sm"><p class="font-bold text-[#2c2420]">Rose Quartz Roller</p><p class="text-[#8c7b6b]">Tool</p></div>
+                        </div>
+                    </div>
+
+                    <button class="w-full border border-[#2c2420] text-[#2c2420] font-medium py-3 rounded-xl hover:bg-[#faf7f2] transition-colors">
+                        Beli Paket Spa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-24 bg-[#2c2420] text-[#faf7f2] relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://placehold.co/1920x1080/2c2420/fff?text=Pattern')]"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="font-serif text-3xl md:text-4xl text-center mb-16">Kata Mereka yang Telah Berubah</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white/5 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
+                    <div class="flex text-[#c45d3e] mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-lg italic font-serif leading-relaxed mb-6">"Saya punya kulit sangat sensitif dan berjerawat. Terra adalah satu-satunya produk yang tidak membuat wajah saya perih. Akhirnya saya berani keluar rumah tanpa makeup."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/c45d3e/fff?text=S" class="rounded-full" alt="Sarah">
+                        <div>
+                            <p class="font-bold">Sarah Amalia</p>
+                            <p class="text-sm text-[#8c7b6b]">Jakarta Selatan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
+                    <div class="flex text-[#c45d3e] mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-lg italic font-serif leading-relaxed mb-6">"Wanginya sangat menenangkan, seperti masuk ke spa mewah. Teksturnya ringan tapi sangat melembabkan. Kulit saya terasa 'kenyang' di pagi hari."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://placehold.co/60x60/c45d3e/fff?text=D" class="rounded-full" alt="Dina">
+                        <div>
+                            <p class="font-bold">Dina Kusuma</p>
+                            <p class="text-sm text-[#8c7b6b]">Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 max-w-3xl mx-auto px-6">
+        <h2 class="font-serif text-3xl font-bold text-[#2c2420] text-center mb-12">Pertanyaan Umum</h2>
+        <div class="space-y-4">
+            <details class="group bg-white rounded-2xl border border-[#e8e0d4] overflow-hidden [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-[#2c2420] font-medium hover:bg-[#faf7f2] transition">
+                    <h3>Apakah aman untuk ibu hamil?</h3>
+                    <span class="text-[#c45d3e] transition group-open:rotate-180"><i class="ph-bold ph-caret-down"></i></span>
+                </summary>
+                <div class="px-6 pb-6 text-[#8c7b6b] leading-relaxed">
+                    Ya, 100%. Kami tidak menggunakan retinoid sintetik atau salicylic acid dosis tinggi. Namun, kami sarankan konsultasi dengan dokter Anda untuk kepastian 100% karena kondisi setiap kehamilan berbeda.
+                </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl border border-[#e8e0d4] overflow-hidden [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-[#2c2420] font-medium hover:bg-[#faf7f2] transition">
+                    <h3>Berapa lama produk habis?</h3>
+                    <span class="text-[#c45d3e] transition group-open:rotate-180"><i class="ph-bold ph-caret-down"></i></span>
+                </summary>
+                <div class="px-6 pb-6 text-[#8c7b6b] leading-relaxed">
+                    Dengan penggunaan rutin pagi dan malam, satu paket Starter biasanya habis dalam waktu 45-60 hari. Sedikit saja sudah cukup merata.
+                </div>
+            </details>
+            
+             <details class="group bg-white rounded-2xl border border-[#e8e0d4] overflow-hidden [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-[#2c2420] font-medium hover:bg-[#faf7f2] transition">
+                    <h3>Apakah ada efek purging?</h3>
+                    <span class="text-[#c45d3e] transition group-open:rotate-180"><i class="ph-bold ph-caret-down"></i></span>
+                </summary>
+                <div class="px-6 pb-6 text-[#8c7b6b] leading-relaxed">
+                    Karena kami menggunakan bahan alami yang gentle, risiko purging sangat minim. Namun, jika Anda beralih dari produk kimia keras, kulit Anda mungkin butuh 1 minggu untuk detoksifikasi.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#f5f0e8] pt-20 pb-10 border-t border-[#e8e0d4]">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-[#c45d3e] flex items-center justify-center text-white">
+                            <i class="ph-fill ph-plant"></i>
+                        </div>
+                        <span class="font-serif font-bold text-xl tracking-tight text-[#2c2420]">TERRA</span>
+                    </a>
+                    <p class="text-[#8c7b6b] mb-6 max-w-sm">
+                        Misi kami adalah menghadirkan kecantikan yang jujur, etis, dan efektif. Dari tanah untuk kulitmu.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#2c2420] hover:bg-[#c45d3e] hover:text-white transition-all shadow-sm"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#2c2420] hover:bg-[#c45d3e] hover:text-white transition-all shadow-sm"><i class="ph-fill ph-tiktok-logo"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#2c2420] hover:bg-[#c45d3e] hover:text-white transition-all shadow-sm"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif font-bold text-[#2c2420] mb-6">Belanja</h4>
+                    <ul class="space-y-3 text-[#8c7b6b]">
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Semua Produk</a></li>
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Bundles</a></li>
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Gift Cards</a></li>
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Lokasi Toko</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif font-bold text-[#2c2420] mb-6">Bantuan</h4>
+                    <ul class="space-y-3 text-[#8c7b6b]">
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Track Order</a></li>
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Pengembalian</a></li>
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">Konsultasi Kulit</a></li>
+                        <li><a href="#" class="hover:text-[#c45d3e] transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-[#e8e0d4] pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-[#8c7b6b]">
+                <p>&copy; 2024 Terra Botanics Indonesia.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-[#c45d3e]">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-[#c45d3e]">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoSpace - Fokus pada Esensi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        minimal: {
+                            bg: '#fcfcfc',
+                            surface: '#f4f4f5', // zinc-100
+                            border: '#e4e4e7', // zinc-200
+                            text: '#18181b', // zinc-950
+                            muted: '#71717a', // zinc-500
+                            accent: '#2563eb', // blue-600
+                            accentLight: '#eff6ff', // blue-50
+                        }
+                    },
+                    backgroundImage: {
+                        'subtle-gradient': 'radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.03) 0%, rgba(252, 252, 252, 1) 60%)',
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                        'float': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfcfc;
+            color: #18181b;
+        }
+        /* Utilitas untuk card minimalis */
+        .card-minimal {
+            background-color: white;
+            border: 1px solid #e4e4e7;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease-in-out;
+        }
+        .card-minimal:hover {
+            border-color: #d4d4d8; /* zinc-300 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .btn-primary {
+            background-color: #18181b;
+            color: white;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #27272a; /* zinc-800 */
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-minimal-accentLight selection:text-minimal-accent">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 border-b border-minimal-border bg-[#fcfcfc]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 font-semibold text-lg tracking-tight">
+                <div class="w-5 h-5 bg-black rounded-full"></div>
+                MonoSpace
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-minimal-muted">
+                <a href="#philosophy" class="hover:text-black transition-colors">Filosofi</a>
+                <a href="#features" class="hover:text-black transition-colors">Fitur</a>
+                <a href="#pricing" class="hover:text-black transition-colors">Harga</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden md:block text-sm font-medium text-minimal-muted hover:text-black">Log in</a>
+                <button class="btn-primary px-5 py-2 rounded-xl text-sm font-medium shadow-md">
+                    Mulai Gratis
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 overflow-hidden">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-subtle-gradient -z-10"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-minimal-surface border border-minimal-border text-minimal-muted text-xs font-medium mb-8">
+                <span class="w-2 h-2 rounded-full bg-minimal-accent"></span>
+                Versi 2.0 kini tersedia
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tight text-black mb-6 leading-[1.1]">
+                Satu ruang untuk <br class="hidden md:block" />
+                segala pemikiran Anda.
+            </h1>
+            
+            <p class="text-xl text-minimal-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+                Berhenti beralih antar 10 aplikasi berbeda. MonoSpace menyatukan catatan, tugas, dan kalender dalam satu antarmuka yang tenang dan bebas gangguan.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+                <button class="btn-primary px-8 py-3.5 rounded-xl font-medium text-base shadow-lg">
+                    Coba MonoSpace Gratis
+                </button>
+                <button class="px-8 py-3.5 rounded-xl font-medium text-base border border-minimal-border text-black hover:bg-minimal-surface transition-colors flex items-center justify-center gap-2">
+                    <i class="ph ph-play-circle text-lg"></i> Tonton Video
+                </button>
+            </div>
+
+            <!-- Hero Image / Interface Mockup -->
+            <div class="relative">
+                <div class="relative rounded-xl border border-minimal-border bg-white shadow-float overflow-hidden p-2">
+                    <div class="rounded-lg overflow-hidden bg-minimal-surface/50 border border-minimal-border/50">
+                         <!-- Clean Browser Bar -->
+                         <div class="h-10 bg-white border-b border-minimal-border flex items-center px-4 gap-2">
+                            <div class="flex gap-1.5 opacity-30">
+                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                            </div>
+                         </div>
+                        <img src="https://placehold.co/1200x800/ffffff/f4f4f5?text=Minimalist+Dashboard+UI" alt="App Interface" class="w-full">
+                    </div>
+                </div>
+                
+                <!-- Floating Elements representing simplicity -->
+                <div class="absolute -right-12 top-20 card-minimal p-4 rounded-xl hidden lg:flex items-center gap-3 animate-bounce shadow-lg" style="animation-duration: 3s;">
+                    <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">
+                        <i class="ph-bold ph-check"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-minimal-muted">Status</p>
+                        <p class="text-sm font-medium">Project Selesai</p>
+                    </div>
+                </div>
+
+                <div class="absolute -left-12 bottom-20 card-minimal p-4 rounded-xl hidden lg:flex items-center gap-3 animate-bounce shadow-lg" style="animation-duration: 4s;">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs">
+                        <i class="ph-bold ph-bell"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-minimal-muted">Reminder</p>
+                        <p class="text-sm font-medium">Meeting 10:00 AM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Social Proof -->
+    <section class="py-12 border-y border-minimal-border bg-minimal-surface/30">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm text-minimal-muted mb-8">Digunakan oleh tim desain di</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-50">
+                <img src="https://placehold.co/100x30/f4f4f5/71717a?text=INTERCOM" alt="Logo">
+                <img src="https://placehold.co/100x30/f4f4f5/71717a?text=LINEAR" alt="Logo">
+                <img src="https://placehold.co/100x30/f4f4f5/71717a?text=NOTION" alt="Logo">
+                <img src="https://placehold.co/100x30/f4f4f5/71717a?text=VERCEL" alt="Logo">
+                <img src="https://placehold.co/100x30/f4f4f5/71717a?text=RAYCAST" alt="Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition (Grid) -->
+    <section id="philosophy" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-3xl font-semibold text-black mb-4">Kompleksitas adalah musuh produktivitas.</h2>
+                <p class="text-minimal-muted text-lg">
+                    Kami membuang 80% fitur yang tidak pernah Anda gunakan, menyisakan 20% yang benar-benar penting untuk pekerjaan Anda.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-minimal p-8 rounded-xl flex flex-col items-start h-full">
+                    <div class="w-12 h-12 bg-minimal-surface rounded-lg flex items-center justify-center text-black mb-6">
+                        <i class="ph ph-lightning text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Kecepatan Instan</h3>
+                    <p class="text-minimal-muted leading-relaxed">
+                        Dibangun dengan teknologi native. Buka aplikasi, cari file, dan ketik ide dalam hitungan milidetik. Tidak ada loading spinner.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-minimal p-8 rounded-xl flex flex-col items-start h-full">
+                    <div class="w-12 h-12 bg-minimal-surface rounded-lg flex items-center justify-center text-black mb-6">
+                        <i class="ph ph-focus text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Mode Bebas Gangguan</h3>
+                    <p class="text-minimal-muted leading-relaxed">
+                        Antarmuka yang menghilang saat Anda mengetik. Biarkan konten Anda menjadi pusat perhatian, bukan tombol-tombol aplikasi.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-minimal p-8 rounded-xl flex flex-col items-start h-full">
+                    <div class="w-12 h-12 bg-minimal-surface rounded-lg flex items-center justify-center text-black mb-6">
+                        <i class="ph ph-arrows-split text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">Struktur Fleksibel</h3>
+                    <p class="text-minimal-muted leading-relaxed">
+                        Kanban, List, atau Dokumen? Jangan batasi diri Anda. MonoSpace beradaptasi dengan cara kerja tim Anda, bukan sebaliknya.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Feature Section (Left/Right) -->
+    <section id="features" class="py-24 bg-minimal-surface/50 border-y border-minimal-border">
+        <div class="max-w-6xl mx-auto px-6 space-y-24">
+            
+            <!-- Item 1 -->
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="relative p-8 bg-white rounded-2xl border border-minimal-border shadow-sm">
+                        <img src="https://placehold.co/600x600/ffffff/e4e4e7?text=Clean+Writing+Interface" alt="Editor" class="w-full rounded-lg">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h3 class="text-2xl font-semibold mb-4">Editor yang menenangkan.</h3>
+                    <p class="text-minimal-muted text-lg mb-6">
+                        Menulis laporan atau coding terasa seperti meditasi. Dengan dukungan Markdown penuh dan slash commands, tangan Anda tidak perlu meninggalkan keyboard.
+                    </p>
+                    <ul class="space-y-3 text-sm text-minimal-muted">
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> Markdown Support</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> Export to PDF/HTML</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> Real-time Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Manajemen tugas, disederhanakan.</h3>
+                    <p class="text-minimal-muted text-lg mb-6">
+                        Jangan habiskan waktu mengelola tiket. Drag and drop, filter dengan cepat, dan kembali bekerja. Tampilan visual yang intuitif untuk setiap proyek.
+                    </p>
+                    <button class="text-minimal-accent hover:text-blue-700 font-medium inline-flex items-center gap-1">
+                        Lihat Workflow <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+                <div>
+                    <div class="relative p-8 bg-white rounded-2xl border border-minimal-border shadow-sm">
+                        <img src="https://placehold.co/600x600/ffffff/e4e4e7?text=Kanban+Board+Minimal" alt="Kanban" class="w-full rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-16">Dicintai oleh para minimalis</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="card-minimal p-6 rounded-xl">
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4 text-xs">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-minimal-text text-sm leading-relaxed mb-6">
+                        "Akhirnya aplikasi yang tidak mencoba melakukan segalanya. MonoSpace melakukan satu hal—mengatur hidup saya—dengan sangat sempurna."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://placehold.co/50x50/ccc/fff" alt="User">
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold">Andi Pratama</p>
+                            <p class="text-[10px] text-minimal-muted">Product Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="card-minimal p-6 rounded-xl">
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4 text-xs">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-minimal-text text-sm leading-relaxed mb-6">
+                        "UI-nya sangat bersih. Saya merasa lebih tenang saat membuka aplikasi ini dibandingkan tools lain yang penuh notifikasi merah."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://placehold.co/50x50/ccc/fff" alt="User">
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold">Jessica T.</p>
+                            <p class="text-[10px] text-minimal-muted">Penulis Lepas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="card-minimal p-6 rounded-xl">
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4 text-xs">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-minimal-text text-sm leading-relaxed mb-6">
+                        "Sinkronisasi antar perangkat sangat cepat. Saya mengetik di laptop, dan muncul di HP seketika. Sangat membantu workflow saya."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://placehold.co/50x50/ccc/fff" alt="User">
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold">Budi Santoso</p>
+                            <p class="text-[10px] text-minimal-muted">Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-minimal-surface">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-semibold mb-4">Investasi Kecil untuk Ketenangan</h2>
+                <p class="text-minimal-muted">Tanpa biaya tersembunyi. Batalkan kapan saja.</p>
+                
+                <!-- Toggle -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <span class="text-sm font-medium">Bulanan</span>
+                    <button class="w-12 h-6 bg-black rounded-full relative">
+                        <div class="w-4 h-4 bg-white rounded-full absolute top-1 right-1"></div>
+                    </button>
+                    <span class="text-sm font-medium text-minimal-muted">Tahunan <span class="text-minimal-accent text-xs">(Hemat 20%)</span></span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Personal Plan -->
+                <div class="card-minimal p-8 rounded-xl bg-white flex flex-col">
+                    <h3 class="text-lg font-medium mb-2">Personal</h3>
+                    <p class="text-minimal-muted text-sm mb-6">Untuk individu yang ingin terorganisir.</p>
+                    <div class="text-4xl font-semibold mb-8">Gratis</div>
+                    
+                    <ul class="space-y-4 mb-8 text-sm text-minimal-muted flex-1">
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> Unlimited Notes</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> 2 Project Boards</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> 50MB Upload Limit</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-black"></i> Sync 2 Devices</li>
+                    </ul>
+                    
+                    <button class="w-full py-3 rounded-xl border border-minimal-border font-medium hover:bg-minimal-surface transition-colors">
+                        Mulai Sekarang
+                    </button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="card-minimal p-8 rounded-xl bg-black text-white flex flex-col shadow-xl">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-lg font-medium mb-2">Pro Workspace</h3>
+                            <p class="text-gray-400 text-sm mb-6">Untuk power user dan freelancer.</p>
+                        </div>
+                        <span class="bg-white/20 text-white text-[10px] px-2 py-1 rounded">POPULAR</span>
+                    </div>
+                    <div class="text-4xl font-semibold mb-8">Rp 49.000<span class="text-lg font-normal text-gray-400">/bln</span></div>
+                    
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-1">
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-white"></i> Everything in Personal</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-white"></i> Unlimited Boards</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-white"></i> 5GB Upload Limit</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-white"></i> Version History (30 Days)</li>
+                    </ul>
+                    
+                    <button class="w-full py-3 rounded-xl bg-white text-black font-medium hover:bg-gray-100 transition-colors">
+                        Upgrade ke Pro
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="py-24 max-w-2xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold mb-10">Pertanyaan Umum</h2>
+        <div class="space-y-4">
+            <details class="group border-b border-minimal-border pb-4">
+                <summary class="flex justify-between items-center cursor-pointer font-medium hover:text-minimal-accent transition-colors">
+                    Bisakah saya mengimport data dari Notion/Evernote?
+                    <i class="ph-bold ph-caret-down group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-minimal-muted text-sm mt-4 leading-relaxed">
+                    Ya, kami menyediakan alat import satu-klik untuk Notion, Evernote, dan file Markdown standar. Struktur folder Anda akan tetap terjaga.
+                </p>
+            </details>
+            <details class="group border-b border-minimal-border pb-4">
+                <summary class="flex justify-between items-center cursor-pointer font-medium hover:text-minimal-accent transition-colors">
+                    Apakah ada aplikasi mobile?
+                    <i class="ph-bold ph-caret-down group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-minimal-muted text-sm mt-4 leading-relaxed">
+                    Tentu saja. Aplikasi MonoSpace tersedia untuk iOS dan Android dengan fitur offline-first. Anda bisa bekerja tanpa koneksi internet.
+                </p>
+            </details>
+            <details class="group border-b border-minimal-border pb-4">
+                <summary class="flex justify-between items-center cursor-pointer font-medium hover:text-minimal-accent transition-colors">
+                    Bagaimana dengan keamanan data saya?
+                    <i class="ph-bold ph-caret-down group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-minimal-muted text-sm mt-4 leading-relaxed">
+                    Data Anda dienkripsi saat istirahat (at rest) dan saat transit. Kami menggunakan standar keamanan SOC2 dan backup harian otomatis.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-semibold mb-6">Siap menyederhanakan pekerjaan Anda?</h2>
+            <p class="text-minimal-muted text-lg mb-10">Bergabunglah dengan 50,000+ orang yang memilih fokus daripada fitur.</p>
+            <button class="btn-primary px-10 py-4 rounded-xl font-medium text-lg shadow-lg">
+                Mulai Gratis Sekarang
+            </button>
+            <p class="text-xs text-minimal-muted mt-6">Tidak perlu kartu kredit. Gratis selamanya untuk penggunaan personal.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-minimal-border pt-16 pb-12 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 font-semibold text-lg tracking-tight mb-4">
+                        <div class="w-5 h-5 bg-black rounded-full"></div>
+                        MonoSpace
+                    </a>
+                    <p class="text-sm text-minimal-muted">
+                        Mendesain alat untuk pikiran yang jernih. Dibuat dengan hati-hati di Bandung.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Produk</h4>
+                    <ul class="space-y-2 text-sm text-minimal-muted">
+                        <li><a href="#" class="hover:text-black transition-colors">Download</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Changelog</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Docs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Perusahaan</h4>
+                    <ul class="space-y-2 text-sm text-minimal-muted">
+                        <li><a href="#" class="hover:text-black transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Karir</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Legal</h4>
+                    <ul class="space-y-2 text-sm text-minimal-muted">
+                        <li><a href="#" class="hover:text-black transition-colors">Privasi</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-minimal-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-minimal-muted">&copy; 2024 MonoSpace Inc. Hak cipta dilindungi.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-minimal-muted hover:text-black"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                    <a href="#" class="text-minimal-muted hover:text-black"><i class="ph-fill ph-github-logo text-xl"></i></a>
+                    <a href="#" class="text-minimal-muted hover:text-black"><i class="ph-fill ph-instagram-logo text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
