@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad | Tas Ransel Laptop Minimalis Anti Air</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f6f6f6',
+                            100: '#e7e7e7',
+                            900: '#111111', // Deep sleek black
+                            950: '#0a0a0a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scroll Reveal Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered delays for child elements */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Custom subtle shadow for premium feel */
+        .shadow-soft {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05);
+        }
+
+        /* --- FOKUS PERBAIKAN: KUNCI UKURAN TOMBOL --- */
+        .btn-lock {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            line-height: 1 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            box-sizing: border-box !important;
+            text-decoration: none !important;
+        }
+        .btn-lock-lg {
+            height: 56px !important;
+            max-height: 56px !important;
+        }
+        .btn-lock-sm {
+            height: 40px !important;
+            max-height: 40px !important;
+        }
+
+        /* --- FOKUS PERBAIKAN: KUNCI UKURAN FAQ ACCORDION --- */
+        /* Mencegah tag <button> FAQ ikut membengkak karena CSS global builder */
+        .faq-button {
+            min-height: 0 !important;
+            height: auto !important;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+            line-height: 1.5 !important;
+            margin: 0 !important;
+            background-color: transparent !important;
+        }
+        
+        /* Mencegah teks jawaban merenggang berlebihan */
+        .faq-answer {
+            padding-top: 0 !important;
+            padding-bottom: 20px !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-900 bg-brand-50 antialiased selection:bg-brand-900 selection:text-white">
+
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="w-8 h-8 bg-brand-900 text-white flex items-center justify-center rounded-lg font-bold text-xl">
+                    N
+                </div>
+                <span class="font-bold text-xl tracking-tight">Nomad</span>
+            </div>
+            
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-500">
+                <a href="#fitur" class="hover:text-brand-900 transition-colors">Fitur</a>
+                <a href="#testimoni" class="hover:text-brand-900 transition-colors">Testimoni</a>
+                <a href="#faq" class="hover:text-brand-900 transition-colors">FAQ</a>
+            </nav>
+
+            <a href="#beli" class="btn-lock btn-lock-sm bg-brand-900 hover:bg-black text-white px-6 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-900/20">
+                Beli Sekarang
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden relative bg-white">
+            <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-gray-200/60 to-transparent blur-[80px] -z-10"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-gray-200/60 via-gray-100/40 to-transparent blur-[100px] -z-10"></div>
+            <div class="absolute top-[20%] right-[20%] w-[300px] h-[300px] rounded-full bg-gray-100/50 blur-[60px] -z-10 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                    
+                    <div class="reveal max-w-2xl order-2 lg:order-1">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-500 border-l border-gray-300 pl-3">Dipercaya 1.000+ Pelanggan</span>
+                        </div>
+                        
+                        <h1 class="text-4xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+                            Bergerak Bebas. <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-800">Tanpa Batasan.</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
+                            Tas Ransel Laptop 'Nomad' memadukan desain minimalis elegan dengan fungsionalitas maksimal. Anti air, perlindungan optimal untuk laptop 15 inci, dan siap menemani rutinitas Anda.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <a href="#beli" class="btn-lock btn-lock-lg w-full sm:w-auto text-center bg-brand-900 hover:bg-black text-white px-8 rounded-xl text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-900/20 hover:-translate-y-1 gap-2 group">
+                                Beli Sekarang
+                                <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#fitur" class="btn-lock btn-lock-lg w-full sm:w-auto text-center bg-white border border-gray-200 hover:border-gray-400 text-brand-900 px-8 rounded-xl text-base font-semibold transition-all">
+                                Pelajari Fitur
+                            </a>
+                        </div>
+                        
+                        <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-6">
+                            <div class="flex -space-x-3">
+                                <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User">
+                                <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="User">
+                                <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="User">
+                                <div class="w-10 h-10 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600">+1k</div>
+                            </div>
+                            <div class="flex items-center gap-4 text-sm text-gray-500 font-medium">
+                                <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-brand-900"></i> Stok Terbatas</div>
+                                <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-brand-900"></i> Garansi Sleting</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal delay-200 relative lg:ml-auto w-full max-w-[480px] mx-auto mt-0 lg:mt-0 order-1 lg:order-2">
+                        <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.12)] border border-white/80 ring-1 ring-gray-900/5 bg-white transform hover:scale-[1.01] transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nomad Backpack Premium" class="w-full h-auto object-cover aspect-[4/5] scale-[1.01]">
+                        </div>
+                        
+                        <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-xl px-8 py-4 rounded-full shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] border border-white/60 z-20 whitespace-nowrap flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center shadow-sm">
+                                <i class="ph-fill ph-drop text-brand-900 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-brand-900 leading-tight">100% Material Anti Air</p>
+                                <p class="text-xs text-gray-500 leading-tight mt-0.5">Perlindungan cuaca ekstrem</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="border-y border-gray-200 bg-white py-10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
+                <p class="text-sm font-medium text-gray-400 mb-6 uppercase tracking-wider">Dipercaya oleh profesional dari</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
+                    <span class="text-xl font-bold font-serif">TechCorp</span>
+                    <span class="text-xl font-bold">Studio.</span>
+                    <span class="text-xl font-black italic">AGENCY</span>
+                    <span class="text-xl font-medium tracking-widest">NEXUS</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="fitur" class="py-24 bg-brand-50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Didesain untuk Efisiensi</h2>
+                    <p class="text-gray-600">Setiap detail pada Nomad Backpack dipikirkan secara matang untuk mendukung mobilitas Anda di area urban.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 overflow-hidden reveal delay-100">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Waterproof Feature" class="w-full aspect-[4/3] object-cover">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-900 mb-6">
+                                <i class="ph ph-drop text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Material Anti Air</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Terbuat dari bahan kanvas sintetis premium berlapis penolak air. Aman menerjang hujan ringan.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 overflow-hidden reveal delay-200">
+                         <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Laptop Compartment" class="w-full aspect-[4/3] object-cover">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-900 mb-6">
+                                <i class="ph ph-laptop text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Muat Laptop 15"</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Kompartemen khusus berlapis busa tebal untuk melindungi laptop ukuran 15 inci dari benturan.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 overflow-hidden reveal delay-300">
+                         <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Organizer" class="w-full aspect-[4/3] object-cover">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-900 mb-6">
+                                <i class="ph ph-squares-four text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Smart Organizer</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Dilengkapi banyak kantong internal dan eksternal. Kabel dan powerbank tertata rapi.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-soft hover:-translate-y-2 transition-transform duration-300 overflow-hidden reveal delay-100">
+                         <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Zipper Quality" class="w-full aspect-[4/3] object-cover">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-900 mb-6">
+                                <i class="ph ph-lock-key text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Garansi Sleting</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Menggunakan sleting YKK anti-macet. Jaminan perbaikan jika sleting rusak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <div class="order-2 lg:order-1 reveal">
+                        <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                            <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Detail 1" class="rounded-2xl w-full h-40 sm:h-48 object-cover shadow-sm hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Detail 2" class="rounded-2xl w-full h-40 sm:h-48 object-cover shadow-sm hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Detail 3" class="rounded-2xl w-full h-40 sm:h-48 object-cover shadow-sm hover:scale-105 transition-transform duration-300">
+                            <img src="https://images.unsplash.com/photo-1491336477066-31156b5e4f35?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Detail 4" class="rounded-2xl w-full h-40 sm:h-48 object-cover shadow-sm hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2 reveal delay-200">
+                        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-6">Estetika Minimalis, <br/>Kapasitas Maksimal.</h2>
+                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            Hitam pekat yang elegan membuatnya cocok dipadukan dengan gaya kasual maupun pakaian kantor formal. Tidak ada logo besar yang mencolok, hanya desain fungsional yang berbicara.
+                        </p>
+                        <ul class="space-y-4 text-gray-700 font-medium">
+                            <li class="flex items-center gap-3">
+                                <i class="ph-fill ph-check-circle text-brand-900 text-xl"></i> Material luar Matte Black
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ph-fill ph-check-circle text-brand-900 text-xl"></i> Tali bahu ergonomis & empuk
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="ph-fill ph-check-circle text-brand-900 text-xl"></i> Slot tersembunyi untuk paspor/dompet
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri" class="py-24 bg-brand-50 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Galeri Nomad</h2>
+                    <p class="text-gray-600">Lihat lebih dekat detail dan gaya Nomad Backpack di berbagai aktivitas.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px] sm:auto-rows-[200px] reveal delay-100">
+                    <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1491336477066-31156b5e4f35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden relative group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden relative group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="col-span-2 rounded-2xl overflow-hidden relative group shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimoni" class="py-24 bg-brand-900 text-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Kata Mereka yang Sudah Memakai</h2>
+                    <p class="text-gray-400">Bergabung dengan ribuan profesional urban yang telah meng-upgrade pengalaman komuter mereka.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-brand-950 p-8 rounded-2xl border border-gray-800 reveal delay-100">
+                        <div class="flex text-yellow-400 mb-4 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-gray-300 mb-6 leading-relaxed">"Tas terbaik untuk ngantor tiap hari. Kemarin sempat kehujanan deras pas naik motor, pas dicek laptop di dalam tetap kering total. Desain hitamnya juga kelihatan premium."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold">R</div>
+                            <div>
+                                <p class="font-bold text-sm">Reza Pahlevi</p>
+                                <p class="text-xs text-gray-500">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-950 p-8 rounded-2xl border border-gray-800 reveal delay-200">
+                        <div class="flex text-yellow-400 mb-4 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-gray-300 mb-6 leading-relaxed">"Kantong organizernya penyelamat banget. Dulu susah nyari flashdisk atau kunci di dasar tas. Sekarang semua punya slotnya masing-masing. Sangat rapi!"</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold">D</div>
+                            <div>
+                                <p class="font-bold text-sm">Dina Mariana</p>
+                                <p class="text-xs text-gray-500">Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-950 p-8 rounded-2xl border border-gray-800 reveal delay-300">
+                        <div class="flex text-yellow-400 mb-4 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i>
+                        </div>
+                        <p class="text-gray-300 mb-6 leading-relaxed">"Ukurannya pas, gak terlalu bulky tapi muat banyak. Laptop 15 inch masuk dengan gampang. Tali punggungnya empuk jadi gak pegal meski bawa beban lumayan berat."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold">A</div>
+                            <div>
+                                <p class="font-bold text-sm">Bagas W.</p>
+                                <p class="text-xs text-gray-500">Mahasiswa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="beli" class="py-24 bg-brand-900 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10 reveal">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">Amankan Nomad Backpack Anda</h2>
+                    <p class="text-gray-300 text-lg">Penawaran spesial dengan stok terbatas. Tingkatkan produktivitas Anda hari ini.</p>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-2xl flex flex-col lg:flex-row max-w-4xl mx-auto">
+                    
+                    <div class="p-8 lg:p-12 lg:w-3/5 bg-white text-brand-900 rounded-t-3xl lg:rounded-tr-none lg:rounded-bl-3xl">
+                        <h3 class="text-2xl font-bold mb-2">Paket Pembelian Nomad</h3>
+                        <p class="text-gray-500 mb-8 text-sm">Semua yang Anda butuhkan untuk komuter yang lebih baik.</p>
+                        
+                        <ul class="space-y-5">
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                                    <i class="ph-bold ph-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-brand-900">1x Tas Ransel Laptop 'Nomad'</span>
+                                    <span class="text-sm text-gray-500">Hitam Minimalis, Material Anti Air</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                                    <i class="ph-bold ph-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-brand-900">Garansi Sleting Seumur Hidup</span>
+                                    <span class="text-sm text-gray-500">Perbaikan gratis jika sleting macet/rusak</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                                    <i class="ph-bold ph-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-brand-900">Premium Dustbag</span>
+                                    <span class="text-sm text-gray-500">Untuk penyimpanan saat tidak digunakan</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-8 lg:p-12 lg:w-2/5 flex flex-col justify-center bg-brand-50 relative border-t lg:border-t-0 lg:border-l border-gray-100 text-brand-900 rounded-b-3xl lg:rounded-bl-none lg:rounded-tr-3xl">
+                        <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-red-500 text-white text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-wider shadow-lg shadow-red-500/30 z-10">
+                            Diskon 50%
+                        </div>
+
+                        <div class="mb-8">
+                            <p class="text-sm text-gray-500 font-medium mb-1">Harga Normal <span class="line-through">Rp 750.000</span></p>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-900">Rp 375<span class="text-3xl lg:text-4xl">.000</span></span>
+                            </div>
+                            <p class="text-sm text-green-600 font-semibold mt-2 flex items-center gap-1">
+                                <i class="ph-fill ph-truck"></i> Gratis Ongkos Kirim*
+                            </p>
+                        </div>
+
+                        <button class="btn-lock btn-lock-lg w-full bg-brand-900 hover:bg-black text-white px-8 rounded-xl text-lg font-bold transition-all transform hover:scale-[1.02] shadow-xl shadow-brand-900/30 gap-2 mb-6 group">
+                            Pesan Sekarang <i class="ph-bold ph-shopping-cart group-hover:scale-110 transition-transform"></i>
+                        </button>
+
+                        <div class="flex flex-col gap-3 text-xs text-gray-500 font-medium border-t border-gray-200 pt-6">
+                            <div class="flex items-center gap-2">
+                                <i class="ph-fill ph-shield-check text-green-500 text-base"></i> Transaksi 100% Aman
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="ph-fill ph-arrow-counter-clockwise text-blue-500 text-base"></i> 7 Hari Jaminan Uang Kembali
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-24 bg-brand-50">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl font-bold tracking-tight mb-4">Pertanyaan yang Sering Diajukan</h2>
+                </div>
+
+                <div class="space-y-4 reveal delay-100">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <button class="faq-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold focus:outline-none">
+                            <span>Apakah muat untuk laptop gaming yang tebal?</span>
+                            <i class="ph ph-caret-down text-gray-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                            Kompartemen laptop kami dirancang fleksibel. Muat untuk laptop standar hingga 15.6 inci, termasuk sebagian besar laptop gaming dengan ketebalan maksimal 3 cm.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <button class="faq-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold focus:outline-none">
+                            <span>Bagaimana cara kerja klaim garansi sleting?</span>
+                            <i class="ph ph-caret-down text-gray-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                            Sangat mudah! Jika sleting rusak atau macet dalam penggunaan normal, cukup hubungi Customer Service kami via WhatsApp dengan melampirkan foto kerusakan dan nomor pesanan. Kami akan memperbaiki atau menggantinya.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <button class="faq-button w-full text-left px-6 py-5 flex items-center justify-between font-semibold focus:outline-none">
+                            <span>Apakah benar-benar 100% tahan air (waterproof)?</span>
+                            <i class="ph-caret-down ph text-gray-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+                            Material tas dirancang 'Water Resistant' tingkat tinggi. Aman untuk intensitas hujan ringan hingga sedang. Namun, tidak disarankan untuk direndam dalam air atau hujan lebat durasi panjang karena air berpotensi merembes dari sela jahitan.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-950 text-gray-400 py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <div class="w-6 h-6 bg-white text-brand-900 flex items-center justify-center rounded font-bold text-sm">
+                            N
+                        </div>
+                        <span class="font-bold text-lg tracking-tight">Nomad</span>
+                    </div>
+                    <p class="max-w-xs leading-relaxed">Perlengkapan esensial bagi profesional modern. Didesain untuk ketahanan, fungsionalitas, dan estetika minimalis.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Tautan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Lacak Pesanan</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kebijakan Garansi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">WhatsApp CS</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Email Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-xs text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Nomad Gear. Hak Cipta Dilindungi.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-white">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Scroll Reveal Logic ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- FAQ Accordion Logic ---
+        const faqButtons = document.querySelectorAll('.faq-button');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Close all others
+                faqButtons.forEach(otherBtn => {
+                    if (otherBtn !== button) {
+                        otherBtn.nextElementSibling.classList.add('hidden');
+                        otherBtn.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // --- Sticky Navbar Shadow ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.replace('h-20', 'h-16');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.classList.replace('h-16', 'h-20');
+            }
+        });
+    </script>
+</body>
+</html>
