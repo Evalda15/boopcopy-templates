@@ -1,0 +1,159 @@
+{
+    "templates": [
+        {
+            "file": "Clean & Minimalis/Clean-Minimal-1.html",
+            "tags": [
+                "general",
+                "produk-fisik",
+                "jasa",
+                "edukasi",
+                "saas",
+                "minimalis"
+            ]
+        },
+        {
+            "file": "Clean & Minimalis/Clean-Minimal-2.html",
+            "tags": [
+                "general",
+                "produk-fisik",
+                "jasa",
+                "konsultan",
+                "minimalis"
+            ]
+        },
+        {
+            "file": "Clean & Minimalis/Tas-elegan.html",
+            "tags": [
+                "fashion",
+                "aksesoris",
+                "tas",
+                "premium",
+                "elegan",
+                "brand"
+            ]
+        },
+        {
+            "file": "Cyber Neon/Cyber-Neon-1.html",
+            "tags": [
+                "gaming",
+                "crypto",
+                "nft",
+                "tech",
+                "gadget",
+                "futuristik",
+                "dark"
+            ]
+        },
+        {
+            "file": "Cyber Neon/Cyber-Neon-2.html",
+            "tags": [
+                "gaming",
+                "crypto",
+                "tech",
+                "apps",
+                "software",
+                "futuristik"
+            ]
+        },
+        {
+            "file": "Dark Luxury/Dark-Luxury-1.html",
+            "tags": [
+                "luxury",
+                "premium",
+                "fashion",
+                "jewelry",
+                "parfum",
+                "otomotif",
+                "brand"
+            ]
+        },
+        {
+            "file": "Dark Luxury/Dark-Luxury-2.html",
+            "tags": [
+                "luxury",
+                "premium",
+                "skincare",
+                "beauty",
+                "hotel",
+                "properti"
+            ]
+        },
+        {
+            "file": "Editorial Mono/Editorial-Mono-1.html",
+            "tags": [
+                "media",
+                "portfolio",
+                "seni",
+                "desainer",
+                "fotografi",
+                "editorial"
+            ]
+        },
+        {
+            "file": "Editorial Mono/Editorial-Mono-2.html",
+            "tags": [
+                "media",
+                "buku",
+                "kursus",
+                "edukasi",
+                "personal-brand",
+                "editorial"
+            ]
+        },
+        {
+            "file": "Modern Tech/Modern-Tech-1.html",
+            "tags": [
+                "tech",
+                "saas",
+                "startup",
+                "ai",
+                "software",
+                "apps"
+            ]
+        },
+        {
+            "file": "Modern Tech/Modern-Tech-2.html",
+            "tags": [
+                "tech",
+                "gadget",
+                "elektronik",
+                "smart-home",
+                "produktivitas"
+            ]
+        },
+        {
+            "file": "Modern Tech/modern-tech-3-tiktok.html",
+            "tags": [
+                "social-media",
+                "tiktok",
+                "digital-marketing",
+                "kursus",
+                "online"
+            ]
+        },
+        {
+            "file": "Warm Organic/Warm-Organic-1.html",
+            "tags": [
+                "food",
+                "makanan",
+                "minuman",
+                "kopi",
+                "kuliner",
+                "organik",
+                "natural"
+            ]
+        },
+        {
+            "file": "Warm Organic/Warm-Organic-2.html",
+            "tags": [
+                "health",
+                "skincare",
+                "herbal",
+                "suplemen",
+                "eco",
+                "parenting",
+                "natural"
+            ]
+        }
+    ]
+}
