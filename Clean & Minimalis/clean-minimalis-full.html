@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-copy="page_title">Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        theme: {
+                            bg: 'var(--bg)',
+                            surface: 'var(--surface)',
+                            border: 'var(--border)',
+                            text: 'var(--text)',
+                            muted: 'var(--muted)',
+                            accent: 'var(--accent)',
+                            accentLight: 'var(--accent-light)',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                        'float': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --surface: #F5F5F5;
+            --border: #E5E5E5;
+            --text: #171717;
+            --muted: #737373;
+            --accent: #171717;
+            --accent-light: #E5E5E5;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .card-minimal {
+            background-color: white;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .card-minimal:hover {
+            border-color: var(--muted);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        details summary {
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-theme-accentLight selection:text-theme-accent"
+    style="background-color: var(--bg); color: var(--text);">
+
+    <!-- ==================== SECTION: NAVBAR ==================== -->
+    <nav data-section="navbar"
+        class="fixed w-full z-50 top-0 border-b border-theme-border bg-[var(--bg)]/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 font-semibold text-lg tracking-tight"
+                data-copy="brand_name">Brand</a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-theme-muted">
+                <a href="#problem" class="hover:text-theme-text transition-colors" data-copy="nav_1">Masalah</a>
+                <a href="#features" class="hover:text-theme-text transition-colors" data-copy="nav_2">Fitur</a>
+                <a href="#pricing" class="hover:text-theme-text transition-colors" data-copy="nav_3">Harga</a>
+            </div>
+            <button class="btn-primary px-5 py-2 rounded-xl text-sm font-medium shadow-md"
+                data-copy="nav_cta">CTA</button>
+        </div>
+    </nav>
+
+    <!-- ==================== SECTION: HERO ==================== -->
+    <header data-section="hero" class="relative pt-32 pb-20 lg:pt-48 overflow-hidden">
+        <div class="absolute inset-0 -z-10"
+            style="background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 3%, transparent) 0%, var(--bg) 60%);">
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-theme-surface border border-theme-border text-theme-muted text-xs font-medium mb-8">
+                <span class="w-2 h-2 rounded-full" style="background-color: var(--accent);"></span>
+                <span data-copy="badge">Badge text</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tight mb-6 leading-[1.1]" style="color: var(--text);"
+                data-copy="headline">
+                Headline Tajam
+            </h1>
+            <p class="text-xl text-theme-muted mb-10 max-w-2xl mx-auto leading-relaxed" data-copy="subheadline">
+                Subheadline singkat dan jelas
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+                <button class="btn-primary px-8 py-3.5 rounded-xl font-medium text-base shadow-lg"
+                    data-copy="cta_primary">CTA Utama</button>
+                <button
+                    class="px-8 py-3.5 rounded-xl font-medium text-base border border-theme-border hover:bg-theme-surface transition-colors"
+                    data-copy="cta_secondary">CTA Sekunder</button>
+            </div>
+            <div class="relative">
+                <div class="relative rounded-xl border border-theme-border bg-white shadow-float overflow-hidden p-2">
+                    <div class="rounded-lg overflow-hidden border border-theme-border/50"
+                        style="background-color: var(--surface);">
+                        <div class="h-10 bg-white border-b border-theme-border flex items-center px-4 gap-2">
+                            <div class="flex gap-1.5 opacity-30">
+                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-black"></div>
+                            </div>
+                        </div>
+                        <img data-copy="hero_image"
+                            src="https://placehold.co/1200x800/ffffff/e4e4e7?text=Product+Screenshot" alt="Product"
+                            class="w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== SECTION: TRUST ==================== -->
+    <section data-section="trust" class="py-12 border-y border-theme-border"
+        style="background-color: color-mix(in srgb, var(--surface) 30%, transparent);">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm text-theme-muted mb-8" data-copy="trust_label">Dipercaya oleh</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-50"
+                data-copy-repeat="trust_logos">
+                <div data-repeat-item>
+                    <img data-copy="logo_src" src="https://placehold.co/100x30/f4f4f5/71717a?text=BRAND" alt="Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: PROBLEM ==================== -->
+    <section data-section="problem" id="problem" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="text-3xl font-semibold mb-4" style="color: var(--text);" data-copy="problem_title">Masalah
+                    Utama
+                </h2>
+                <p class="text-theme-muted text-lg" data-copy="problem_body">
+                    Deskripsi masalah yang dirasakan target audience.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8" data-copy-repeat="problem_points">
+                <div class="card-minimal p-8 rounded-xl flex flex-col items-start h-full" data-repeat-item>
+                    <div
+                        class="w-12 h-12 bg-theme-surface rounded-lg flex items-center justify-center text-theme-text mb-6">
+                        <i class="ph ph-lightning text-2xl" data-copy="icon"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" data-copy="title">Poin Judul</h3>
+                    <p class="text-theme-muted leading-relaxed" data-copy="desc">Deskripsi poin ini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: FEATURES ==================== -->
+    <section data-section="features" id="features" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-semibold mb-4" style="color: var(--text);" data-copy="features_title">Kenapa
+                    Kami
+                    Berbeda?</h2>
+                <p class="text-theme-muted text-lg" data-copy="features_subtitle">Subtitle section fitur</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8" data-copy-repeat="features_items">
+                <div class="card-minimal p-8 rounded-xl flex flex-col items-start h-full" data-repeat-item>
+                    <div
+                        class="w-12 h-12 bg-theme-surface rounded-lg flex items-center justify-center text-theme-text mb-6">
+                        <i class="ph ph-star text-2xl" data-copy="icon"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3" data-copy="title">Fitur</h3>
+                    <p class="text-theme-muted leading-relaxed" data-copy="desc">Deskripsi fitur ini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: SHOWCASE ==================== -->
+    <section data-section="showcase" class="py-24 border-y border-theme-border"
+        style="background-color: color-mix(in srgb, var(--surface) 50%, transparent);">
+        <div class="max-w-6xl mx-auto px-6 space-y-24" data-copy-repeat="showcase_items">
+            <div class="grid md:grid-cols-2 gap-16 items-center" data-repeat-item>
+                <div>
+                    <div class="relative p-8 bg-white rounded-2xl border border-theme-border shadow-sm">
+                        <img data-copy="image" src="https://placehold.co/600x600/ffffff/e4e4e7?text=Feature"
+                            alt="Feature" class="w-full rounded-lg">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4" data-copy="title">Fitur Unggulan</h3>
+                    <p class="text-theme-muted text-lg mb-6" data-copy="desc">Deskripsi detail fitur ini dan bagaimana
+                        membantu user.</p>
+                    <ul class="space-y-3 text-sm text-theme-muted" data-copy-repeat="checklist">
+                        <li class="flex items-center gap-3" data-repeat-item>
+                            <i class="ph-bold ph-check" style="color: var(--text);"></i>
+                            <span data-copy="text">Checklist item</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: TESTIMONIALS ==================== -->
+    <section data-section="testimonials" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-16" style="color: var(--text);" data-copy="proof_title">Apa
+                Kata Mereka?</h2>
+            <div class="grid md:grid-cols-3 gap-8" data-copy-repeat="testimonials">
+                <div class="card-minimal p-6 rounded-xl" data-repeat-item>
+                    <div class="flex items-center gap-1 text-yellow-400 mb-4 text-xs">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6" style="color: var(--text);" data-copy="quote">"Testimonial
+                        placeholder."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://placehold.co/50x50/ccc/fff" alt="User">
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold" data-copy="name">Nama</p>
+                            <p class="text-[10px] text-theme-muted" data-copy="role">Role</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: PRICING ==================== -->
+    <section data-section="pricing" id="pricing" class="py-24" style="background-color: var(--surface);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-semibold mb-4" style="color: var(--text);" data-copy="pricing_title">Investasi
+                    untuk Hasil</h2>
+                <p class="text-theme-muted" data-copy="pricing_subtitle">Tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" data-copy-repeat="pricing_plans">
+                <div class="card-minimal p-8 rounded-xl bg-white flex flex-col" data-repeat-item>
+                    <h3 class="text-lg font-medium mb-2" data-copy="plan_name">Paket</h3>
+                    <p class="text-theme-muted text-sm mb-6" data-copy="plan_desc">Deskripsi paket.</p>
+                    <div class="text-4xl font-semibold mb-8" data-copy="plan_price">Rp 0</div>
+                    <ul class="space-y-4 mb-8 text-sm text-theme-muted flex-1" data-copy-repeat="plan_features">
+                        <li class="flex items-center gap-3" data-repeat-item>
+                            <i class="ph-bold ph-check" style="color: var(--text);"></i>
+                            <span data-copy="text">Feature item</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3 rounded-xl border border-theme-border font-medium hover:bg-theme-surface transition-colors"
+                        data-copy="plan_cta">Mulai Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: FAQ ==================== -->
+    <section data-section="faq" class="py-24 max-w-2xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold mb-10" style="color: var(--text);" data-copy="faq_title">Pertanyaan Umum</h2>
+        <div class="space-y-4" data-copy-repeat="faq_items">
+            <details class="group border-b border-theme-border pb-4" data-repeat-item>
+                <summary class="flex justify-between items-center cursor-pointer font-medium transition-colors"
+                    style="color: var(--text);">
+                    <span data-copy="question">Pertanyaan?</span>
+                    <i class="ph-bold ph-caret-down group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-theme-muted text-sm mt-4 leading-relaxed" data-copy="answer">Jawaban.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: CTA ==================== -->
+    <section data-section="cta" class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-semibold mb-6" style="color: var(--text);" data-copy="cta_headline">Siap Mulai?
+            </h2>
+            <p class="text-theme-muted text-lg mb-10" data-copy="cta_subtext">Ajakan untuk bertindak sekarang.</p>
+            <button class="btn-primary px-10 py-4 rounded-xl font-medium text-lg shadow-lg" data-copy="cta_button">Mulai
+                Sekarang</button>
+            <p class="text-xs text-theme-muted mt-6" data-copy="cta_note">Catatan kecil di bawah CTA.</p>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: FOOTER ==================== -->
+    <footer data-section="footer" class="border-t border-theme-border pt-16 pb-12"
+        style="background-color: var(--surface);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="border-t border-theme-border pt-8 text-center">
+                <p class="text-xs text-theme-muted" data-copy="copyright">&copy; 2025 Brand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
