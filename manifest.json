@@ -1,112 +1,98 @@
 {
-    "templates": [
-        {
-            "file": "Clean & Minimalis/Clean-Minimal-1.html",
-            "tags": [
-                "jasa",
-                "edukasi",
-                "umum"
-            ]
-        },
-        {
-            "file": "Clean & Minimalis/Clean-Minimal-2.html",
-            "tags": [
-                "jasa",
-                "konsultan",
-                "umum"
-            ]
-        },
-        {
-            "file": "Clean & Minimalis/Tas-elegan.html",
-            "tags": [
-                "fashion",
-                "aksesoris",
-                "gok"
-            ]
-        },
-        {
-            "file": "Cyber Neon/Cyber-Neon-1.html",
-            "tags": [
-                "gaming",
-                "teknologi"
-            ]
-        },
-        {
-            "file": "Cyber Neon/Cyber-Neon-2.html",
-            "tags": [
-                "teknologi",
-                "aplikasi"
-            ]
-        },
-        {
-            "file": "Dark Luxury/Dark-Luxury-1.html",
-            "tags": [
-                "fashion",
-                "luxury"
-            ]
-        },
-        {
-            "file": "Dark Luxury/Dark-Luxury-2.html",
-            "tags": [
-                "kecantikan",
-                "luxury"
-            ]
-        },
-        {
-            "file": "Editorial Mono/Editorial-Mono-1.html",
-            "tags": [
-                "portfolio",
-                "kreatif"
-            ]
-        },
-        {
-            "file": "Editorial Mono/Editorial-Mono-2.html",
-            "tags": [
-                "edukasi",
-                "buku"
-            ]
-        },
-        {
-            "file": "Modern Tech/Modern-Tech-1.html",
-            "tags": [
-                "teknologi",
-                "saas"
-            ]
-        },
-        {
-            "file": "Modern Tech/Modern-Tech-2.html",
-            "tags": [
-                "teknologi",
-                "gadget"
-            ]
-        },
-        {
-            "file": "Modern Tech/modern-tech-3-tiktok.html",
-            "tags": [
-                "digital-marketing",
-                "kursus"
-            ]
-        },
-        {
-            "file": "Warm Organic/Warm-Organic-1.html",
-            "tags": [
-                "makanan",
-                "minuman"
-            ]
-        },
-        {
-            "file": "Warm Organic/Warm-Organic-2.html",
-            "tags": [
-                "kesehatan",
-                "skincare"
-            ]
-        },
-        {
-            "file": "NamaFolder/Design-GOK-Special.html",
-            "tags": [
-                "gok", 
-                "makanan"
-            ]
-        }
-    ]
+  "schema_version": "2.0",
+  "repository": "boopcopy-templates",
+  "description": "Template collection for BoopCopy AI Landing Page Generator",
+  "cdn_base": "https://boopcopy-templates.pages.dev",
+  "templates": [
+    {
+      "file": "clean-minimalist/service.html",
+      "tags": ["jasa", "edukasi", "umum", "minimalist", "clean"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "clean-minimalist/product.html",
+      "tags": ["produk", "gadget", "umum", "minimalist", "clean"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "clean-minimalist/fashion.html",
+      "tags": ["fashion", "aksesoris", "gok", "tas", "minimalist"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "clean-minimalist/landing-full.html",
+      "tags": ["umum", "landing-page", "full-width", "generic"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "cyber-neon/gaming.html",
+      "tags": ["gaming", "teknologi", "neon", "dark", "futuristic"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "cyber-neon/gadget.html",
+      "tags": ["teknologi", "gadget", "audio", "neon", "futuristic"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "dark-luxury/property.html",
+      "tags": ["properti", "luxury", "hotel", "villa", "premium"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "dark-luxury/watches.html",
+      "tags": ["fashion", "luxury", "jam-tangan", "kecantikan", "premium"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "editorial-mono/fashion.html",
+      "tags": ["fashion", "editorial", "portfolio", "kreatif", "mono"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "editorial-mono/collection.html",
+      "tags": ["edukasi", "buku", "koleksi", "editorial", "mono"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "modern-tech/saas.html",
+      "tags": ["teknologi", "saas", "startup", "software", "modern"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "modern-tech/cloud.html",
+      "tags": ["teknologi", "cloud", "hosting", "devops", "modern"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "modern-tech/course.html",
+      "tags": ["digital-marketing", "kursus", "e-course", "tiktok", "edukasi"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "warm-organic/skincare.html",
+      "tags": ["kesehatan", "skincare", "organic", "natural", "kecantikan"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    },
+    {
+      "file": "warm-organic/beauty.html",
+      "tags": ["kecantikan", "skincare", "organic", "natural", "beauty-oil"],
+      "version": "1.0.0",
+      "changelog": "Initial release"
+    }
+  ]
 }
