@@ -4,4 +4,9 @@
 *~
 .vscode/
 .idea/
+
+# Node.js (hanya untuk tool screenshot, tidak di-deploy)
 node_modules/
+package.json
+package-lock.json
+screenshot.js
